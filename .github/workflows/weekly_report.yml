@@ -30,25 +30,52 @@ jobs:
       - name: 抓取資安新聞(markdown格式)
         run: python scripts/download_articles_markdown.py  
 
-      - name: AI Agent產生新聞摘要（Groq API）
+      - name: AI Agent產生新聞摘要1（Groq API）
         run: python scripts/summarize_news_groq.py
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
+      - name: 抓取NICS(json格式)
+        run: python scripts/fetch_nics.py
+
+      - name: 抓取TheHackersNews(json格式)
+        run: python scripts/fetch_thehackersnews.py
+
+      - name: 抓取TWCERT(json格式)
+        run: python scripts/fetch_twcert.py
+
+      - name: AI Agent產生新聞摘要2（Groq API）
+        run: python scripts/groq_summarize_json.py
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}  
+
       - name: 整理新聞摘要
         run: python scripts/merge_summary_by_section.py
 
-      - name: 產出資安週報（Groq API）
-        run: python scripts/generate_weekly_report_groq.py
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}  
+      - name: 分離新聞摘要
+        run: python scripts/separation.py 
 
       - name: 發送 LINE 通知
         run: python scripts/send_notification_line.py
         env:
           LINE_NOTIFY_TOKEN: ${{ secrets.LINE_NOTIFY_TOKEN }}
 
-      - name: 發送 Discord 通知
-        run: python scripts/send_notification_discord.py
+      - name: 發送 Discord 通知 1
+        run: python scripts/send_notification_discord_security.py
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}  
+
+      - name: 發送 Discord 通知 2
+        run: python scripts/send_notification_discord_threat.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}  
+
+      - name: 發送 Discord 通知 3
+        run: python scripts/send_notification_discord_incident.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} 
+
+      - name: 發送 Discord 通知 4
+        run: python scripts/send_notification_discord_future.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}    
