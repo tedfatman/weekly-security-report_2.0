@@ -55,27 +55,47 @@ jobs:
       - name: 分離新聞摘要
         run: python scripts/separation.py 
 
-      - name: 發送 LINE 通知
-        run: python scripts/send_notification_line.py
+      - name: AI Agent產生security摘要（Groq API）
+        run: python scripts/generate_report_groq_security.py
         env:
-          LINE_NOTIFY_TOKEN: ${{ secrets.LINE_NOTIFY_TOKEN }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
       - name: 發送 Discord 通知 1
         run: python scripts/send_notification_discord_security.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}  
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}     
+
+      - name: AI Agent產生threat摘要（Groq API）
+        run: python scripts/generate_report_groq_threat.py
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
       - name: 發送 Discord 通知 2
         run: python scripts/send_notification_discord_threat.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}  
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}     
+
+      - name: AI Agent產生incident摘要（Groq API）
+        run: python scripts/generate_report_groq_incident.py
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}  
 
       - name: 發送 Discord 通知 3
         run: python scripts/send_notification_discord_incident.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} 
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}     
+
+      - name: AI Agent產生future摘要（Groq API）
+        run: python scripts/generate_report_groq_future.py
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }} 
 
       - name: 發送 Discord 通知 4
         run: python scripts/send_notification_discord_future.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}    
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}      
+
+      - name: 發送 LINE 通知
+        run: python scripts/send_notification_line.py
+        env:
+          LINE_NOTIFY_TOKEN: ${{ secrets.LINE_NOTIFY_TOKEN }} 
