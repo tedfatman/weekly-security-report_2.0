@@ -3,7 +3,7 @@ import re
 
 ARTICLE_DIR = "../data"
 OUTPUT_PATH = "../data/merged_summary.md"
-NUM_ARTICLES = 7
+NUM_ARTICLES = 8
 
 # 預設分類標題
 sections = {
