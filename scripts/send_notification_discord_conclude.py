@@ -2,8 +2,7 @@ import requests
 import os
 
 # 讀取環境變數
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1347207954021220443/DIyou0Ldm4cdFSz8MaLl9gfoPOiBZhbYO3MpIv22QucRgDR3sHuqIN2lZN0ZlMQdT0rQ"
-#DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
+DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 MARKDOWN_FILE = "../data/conclude_report.md"
 
 
