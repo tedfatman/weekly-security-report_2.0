@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 ITHOME_URL = "https://www.ithome.com.tw/tags/資安日報"
-NEWS_FILE = "../data/news_links.json"
+NEWS_FILE = "../data/news_links_nonumber.json"
 
 def fetch_news_links():
     """抓取 iThome 最新 7 篇資安新聞的連結（不含編號）"""
