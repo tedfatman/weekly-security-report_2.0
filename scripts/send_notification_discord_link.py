@@ -4,11 +4,11 @@ import json
 
 
 # 讀取環境變數
-DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
+DISCORD_WEBHOOK_URL_LINK = os.getenv("DISCORD_WEBHOOK_URL")
 NEWS_LINKS_FILE = "../data/news_links_nonumber.json"  # JSON 檔來源改成你的 news_links.json
 
 def send_discord_message():
-    if not DISCORD_WEBHOOK_URL:
+    if not DISCORD_WEBHOOK_URL_LINK:
         print("❌ 錯誤: 未設定 DISCORD_WEBHOOK_URL 環境變數")
         return
 
@@ -40,7 +40,7 @@ def send_discord_message():
         "content": message_text
     }
 
-    response = requests.post(DISCORD_WEBHOOK_URL, json=payload)
+    response = requests.post(DISCORD_WEBHOOK_URL_LINK, json=payload)
 
     if response.status_code == 204:
         print("✅ 訊息已成功發送至 Discord！")
