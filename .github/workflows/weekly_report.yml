@@ -68,12 +68,12 @@ jobs:
       - name: 發送 Discord 通知 1
         run: python scripts/send_notification_discord_security.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}     
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_SECURITY }}     
 
       - name: 發送 Discord 通知 2
         run: python scripts/send_notification_discord_threat.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}     
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_THREAT }}     
 
       - name: AI Agent產生incident摘要（Groq API）
         run: python scripts/generate_report_groq_incident.py
@@ -88,12 +88,12 @@ jobs:
       - name: 發送 Discord 通知 3
         run: python scripts/send_notification_discord_incident.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}      
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_INCIDENT }}      
 
       - name: 發送 Discord 通知 4
         run: python scripts/send_notification_discord_future.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} 
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_FUTURE }} 
 
       - name: 抓取所有資安新聞連結
         run: python scripts/fetch_news_link_nonumber.py
