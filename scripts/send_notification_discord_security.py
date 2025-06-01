@@ -2,11 +2,11 @@ import requests
 import os
 
 # 讀取環境變數
-DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
+DISCORD_WEBHOOK_URL_SECURITY = os.getenv("DISCORD_WEBHOOK_URL")
 MARKDOWN_FILE = "../data/security_report.md"
 
 def send_discord_message():
-    if not DISCORD_WEBHOOK_URL:
+    if not DISCORD_WEBHOOK_URL_SECURITY:
         print("❌ 錯誤: 未設定 DISCORD_WEBHOOK_URL 環境變數")
         return
 
@@ -28,7 +28,7 @@ def send_discord_message():
     }
 
     # 發送到 Discord Webhook
-    response = requests.post(DISCORD_WEBHOOK_URL, json=payload)
+    response = requests.post(DISCORD_WEBHOOK_URL_SECURITY, json=payload)
 
     # 檢查回應
     if response.status_code == 204:
