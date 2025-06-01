@@ -104,7 +104,7 @@ jobs:
       - name: 發送 Discord 通知 資安新聞連結
         run: python scripts/send_notification_discord_link.py
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}   
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_LINK }}   
 
       - name: 合併新聞摘要
         run: python scripts/conclude.py
