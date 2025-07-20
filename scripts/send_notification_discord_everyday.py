@@ -2,7 +2,7 @@ import requests
 import os
 
 # 讀取環境變數
-DISCORD_WEBHOOK_URL_EVERYDAY = os.getenv("DISCORD_WEBHOOK_URL_EVERYDAY")
+DISCORD_WEBHOOK_URL_EVERYDAY = os.getenv("DISCORD_WEBHOOK_URL")
 MARKDOWN_FILE = "../data/structured_report_everyday.md"
 
 
