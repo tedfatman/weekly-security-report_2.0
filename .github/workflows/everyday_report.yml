@@ -1,4 +1,4 @@
-name: 每週資安新聞周報
+name: 每日資安快訊
 
 on:
   schedule:
