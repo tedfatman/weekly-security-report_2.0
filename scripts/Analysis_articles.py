@@ -82,6 +82,10 @@ for i in range(len(sections) - 1):
             "description": description
         })
 
+# 移除 source 開頭的 proxy 前綴（如果存在）
+if report["source"].startswith("https://r.jina.ai/"):
+    report["source"] = report["source"].replace("https://r.jina.ai/", "", 1)
+
 # 確保資料夾存在
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
