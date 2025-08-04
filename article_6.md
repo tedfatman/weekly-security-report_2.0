@@ -1,82 +1,90 @@
-Title: 【資安日報】7月25日，SharePoint零時差漏洞災情浮現，恐成為全球危機
+Title: 【資安日報】7月28日，勒索軟體ShinyHunters傳出對保險公司安聯人壽發動攻擊
 
-URL Source: https://www.ithome.com.tw/news/170267
+URL Source: https://www.ithome.com.tw/news/170280
 
-Published Time: Fri, 25 Jul 2025 23:09:39 GMT
+Published Time: Mon, 28 Jul 2025 23:10:49 GMT
 
 Markdown Content:
-本週最重大的資安事故，莫過於SharePoint零時差漏洞CVE-2025-53770（ToolShell）攻擊，這兩天陸續有新的消息傳出，其中一個是中國駭客Storm-2603用於入侵受害組織，並部署勒索軟體Warlock而產生破壞；另一個消息，則是美國能源部旗下的核安管理署（NNSA）傳出受害，這樣的情況很可能引發核能安全危機。
+上週末有兩則重大的消息引起資安圈關注，其中一起是安聯人壽美國分公司因遭受網路攻擊向美國政府通報資料外洩事故的情況，另一則消息則與北韓IT工作者有關，美國政府逮捕一名涉嫌經營筆電農場協助犯案的女性共犯。
 
-另一個值得留意事故的是，在上週奢華品牌Louis Vuitton（LV）全球多家分公司接連傳出遭到入侵，並出現客戶資料外流的現象後，同樣隸屬LVMH集團的迪奧（Christian Dior Couture），本週開始向受影響的客戶通知資料外洩事故，並向美國3個州檢察長通報。
+回顧這幾天國內發生的資安新聞，有一個消息與個資外洩有關：易飛旅遊（易飛網）上週五突然發布資安重訊，原因是他們獲報部分客戶發現自己個資外流的現象，但是否與今年1月發生的供應鏈攻擊有關，有待進一步釐清。
 
 ### **【攻擊與威脅】**
 
-[**中國駭客Storm-2603從事SharePoint零時差漏洞攻擊，意圖散布勒索軟體Warlock**](https://www.ithome.com.tw/news/170266)
+[**安聯人壽美國分公司傳出遭勒索軟體ShinyHunters攻擊，140萬人個資恐外洩**](https://www.ithome.com.tw/news/170278)
 
-[![Image 1](https://s4.itho.me/sites/default/files/images/Storm-2603.png)](https://s4.itho.me/sites/default/files/images/Storm-2603.png)
+精品業者Louis Vuitton（LV）自7月初開始，接連傳出臺灣、韓國、英國等多個國家的分公司遭到入侵，導致部分客戶資料外洩，背後發動攻擊的駭客組織疑為勒索軟體ShinyHunters，原因可能與該公司使用的第三方服務被駭有關，前兩天傳出這些駭客也對保險業者下手的情況。
 
-上週末爆發的SharePoint零時差漏洞攻擊事故，攻擊者利用被稱為ToolShell的資安漏洞CVE-2025-53770發動攻擊，時間最早可追溯到7月7日，微軟22日指出他們確認有3組中國駭客從事漏洞利用活動，這些組織分別是：Linen Typhoon、Violet Typhoon，以及Storm-2603，但當時僅有說明這些駭客如何利用ToolShell，以及他們偏好攻擊的目標，並未對相關攻擊事故透露有關細節，隔天表示在他們的積極追蹤下，確認Storm-2603用於從事Warlock勒索軟體攻擊活動。
+根據科技新聞網站TechCrunch、Bleeping Computer報導，安聯人壽（Allianz Life）上週末向美國緬因州總檢察長辦公室通報，他們在7月16日出現外部系統遭到駭客攻擊，導致客戶資料外洩，但該公司未透露多少人受到影響。
 
-這些駭客會尋找可透過網際網路存取的SharePoint伺服器，並透過spinstall0.aspx有效酬載（Web Shell）建立初期的存取管道，進而運用w3wp.exe處理程序執行命令。微軟看到駭客下達了一系列的命令，包含whoami來進行偵察，並找出所有使用者並確認權限層級。接著，他們運用CMD和批次指令碼，以及公用程式PsExec進行更廣泛的活動。為了能讓攻擊不受阻礙，駭客濫用services.exe竄改機碼，從而停用內建防毒Microsoft Defender。
+TechCrunch取得安聯人壽發言人Brett Weinberg的說法，駭客攻擊的目標，是該公司的客戶管理系統（CRM），此為以雲端服務為基礎的第三方服務。對方取得CRM的資料庫內容，有機會濫用客戶、金融專家、特定員工的個資，進行社交工程攻擊。
 
-[**美國核武機構NNSA傳出遭遇SharePoint漏洞攻擊**](https://www.ithome.com.tw/news/170248)
+[**駭客組織UNG0002鎖定中國、香港、巴基斯坦，利用LNK檔案從事攻擊**](https://www.ithome.com.tw/news/170213)
 
-7月中SharePoint零時差漏洞CVE-2025-53770（ToolShell）遭駭事件受害層面逐漸擴大，如今傳出有受害組織的身分曝光美國核安管理署（National Nuclear Security Administration，NNSA）在內的美國政府機構。
+[![Image 1](https://s4.itho.me/sites/default/files/images/UNG0002-3.png)](https://s4.itho.me/sites/default/files/images/UNG0002-3.png)
 
-荷蘭資安業者Eye Security上周末首先公開數十家機構SharePoint伺服器發生濫用漏洞事件，後來其中較重大的漏洞被命名為CVE-2025-53770，而其濫用漏洞的手法則稱為ToolShell。多家資安業者估計，初期受害者涵括美國政府機構。
+去年10月資安業者Seqrite揭露攻擊行動Operation Cobalt Whisper，駭客針對香港與巴基斯坦而來，大部分的目標是關鍵基礎設施，如今研究人員循線追查，指出這些駭客今年再度犯案，結合ClickFix手法網路釣魚從事新一波活動Operation AmberMist。
 
-美國能源部向彭博社證實，能源部下他們旗下的國家核安管理署（NNSA）網路上周遭駭客存取。事件發生在7月18日。能源部發言人說，由於Microsoft 365及其網路安全系統的普及，能源部難免受影響。但他強調，NNSA只有極少數系統受影響，而且所有受影響的系統都已恢復營運。
+這個組織被命名為UNG0002，他們以網路間諜活動，主要的活動範圍涵蓋香港、巴基斯坦、中國，以及多個亞洲國家及地區。這些駭客偏好使用Windows捷徑檔（LNK）、VBScript指令碼，以及Cobalt Strike與Metsploit兩款滲透測試工具，並主要以應徵工作為誘餌接觸受害者。
 
-[**時尚美妝品牌Dior向客戶通知年初資料外洩事件**](https://www.ithome.com.tw/news/170260)
+USG002前後兩波攻擊活動何時開始？持續多久？Operation Cobalt Whisper發生在去年5月至9月，駭客主要透過20種感染鏈對國防、電工、民航組織而來，但後來發生在今年1月至5月的Operation AmberMist，他們將攻擊範圍延伸到電玩、軟體開發、學術機構，並使用Shadow RAT、Blister DLL、INET RAT等輕量級的作案工具。
 
-LVMH集團旗下迪奧（Christian Dior Couture）本周向客戶寄發通知信件，告知他們受到半年前的客戶資料外洩事件影響，其中包含加州、德州及華盛頓州消費者。
+[**易飛網傳出客戶資料外洩**](https://mopsov.twse.com.tw/mops/web/ajax_t05sr01_1?firstin=true&stp=1&step=1&SEQ_NO=1&SPOKE_TIME=184602&SPOKE_DATE=20250725&COMPANY_ID=2734)
 
-Dior起初在5月透過網站公告這起事件，但直到7月18日才向受影響的客戶發送個別通知信件。這起事件實際發生於今年1月，Dior 5月7日證實遭未經授權的第三方人士存取特定資料庫，竊走儲存的客戶資料。這次事件外洩的客戶個資包含住家地址、出生日期、社會安全號碼、電子郵件信箱，部份客戶更有護照或身份證件資料被存取。
+7月25日易飛旅遊（易飛網）於股市公開觀測站發布重大訊息，指出有客戶向他們反映自己的個資外洩的情況，這些客戶察覺的原因，就是他們遭遇疑似第三人取得相關資料並向他們聯繫的情況。易飛旅遊此次重訊提到的前次資安事故，有可能是指該公司[今年1月](https://www.ithome.com.tw/news/166852)發布重訊表示遭到供應鏈攻擊，且有個資外洩的情況。然而，不論此次為舊案或新發生的事故，關鍵仍在於業者必須負起責任、採取更有效的行動，唯有強化事前預防、事中察覺，才能真正降低事後的處理負擔。
 
-共有多少分公司受害目前不得而知，但有加州、德州及華盛頓州州檢察長公告Dior於1月的資安事件。共有9716名德州及10878名華盛頓州民受影響，加州居民受影響人數不詳。
-
-[**熱門NPM套件遭到挾持，駭客上架新套件散布惡意程式，起因是維護者遭網釣導致Token外流**](https://www.ithome.com.tw/news/170262)
-
-[![Image 2](https://s4.itho.me/sites/default/files/images/468168199-591bdf7b-7767-45ca-8532-35a2579b8e58.png)](https://s4.itho.me/sites/default/files/images/468168199-591bdf7b-7767-45ca-8532-35a2579b8e58.png)
-
-鎖定開發人員的惡意NPM套件攻擊經常發生，其中大部分駭客都是透過假冒知名冒件的方式，使用極為相似的名稱騙過開發人員，導致他們不慎下載惡意軟體，但最近一波攻擊行動引起軟體開發圈的關注，原因是駭客先針對套件維護者下手，取得他們的NPM帳號來發布新版套件。
-
-根據資安新聞網站Bleeping Computer的報導，每週被下載超過3千萬次的熱門套件eslint-config-prettier，在上週末遭遇供應鏈攻擊，套件維護人員JounQin遭受網釣攻擊，導致他的NPM帳號Token外流，攻擊者得逞後，以他的名義在NPM套件庫上架有問題的套件。
-
-這起事故發現的過程，起因是7月18日有開發人員安裝特定版本的eslint-config-prettier之後，電腦出現不尋常的行為，這些新版套件存在怪異的共通點，那就是維護者雖然在NPM儲存庫上架，卻並未在GitHub專案更新對應的內容，這種情況隨即引起開源軟體社群的注意。
-
-[**Ivanti SSL VPN系統零時差漏洞遭到利用，駭客用來散布MDifyLoader、Cobalt Strike**](https://www.ithome.com.tw/news/170149)
-
-[![Image 3](https://s4.itho.me/sites/default/files/images/ivanti_cs01-800wri.png)](https://s4.itho.me/sites/default/files/images/ivanti_cs01-800wri.png)
-
-今年1月、4月資安業者Ivanti修補旗下SSL VPN系統Ivanti Connect Secure（ICS）重大層級資安漏洞CVE-2025-0282、CVE-2025-22457（CVSS風險皆為9.0），臺灣資安業者杜浦數位安全（TeamT5）今年3月偵測到中國APT駭客用來發動大規模攻擊，在臺灣、日本、韓國等12個國家造成災情，駭客攻擊的範圍涵蓋近20個不同的產業，並提及駭客可能仍持續控制受害組織的環境，最近有資安組織公布新的調查結果，指出利用這兩個漏洞相關的攻擊行動，在去年就已出現。
-
-日本電腦緊急應變小組（JPCERT/CC）指出，他們針對今年2月、4月公布的惡意軟體SpawnChimera、DslogdRAT著手進行深度調查，結果找到更多專門針對ICS零時差漏洞而來的惡意程式及作案工具，駭客從去年12月開始，利用CVE-2025-0282與CVE-2025-22457從事攻擊，散布惡意程式MDifyLoader、Cobalt Strike、Vshell、Fscan，值得留意的是，相關活動迄今仍在持續進行。
-
-[**新加坡關鍵基礎設施遭中國駭客UNC3886鎖定，或透過路由器與資安設備滲透**](https://www.ithome.com.tw/news/170195)
-
-新加坡網路安全局（CSA）發布聲明指出，近期在新加坡部分關鍵基礎設施偵測到的網路攻擊活動，其背後可能與中國背景的進階持續性威脅（APT）組織UNC3886有關。CSA表示，目前正持續追蹤並調查此一攻擊事件，並強調已啟動跨單位合作與威脅情報共享機制，以協助受影響的機構進行相關防禦措施，但基於調查考量，暫不會公開攻擊行動的技術細節。
-
-CSA此次聲明僅簡短指出，UNC3886的攻擊手法具備長期潛伏、高針對性，以及難以短時間內根除的特性，因此未來相關應對與調查工作將持續一段時間。UNC3886此前被資安公司Mandiant以及部分業界報告認為與中國有高度關聯，該組織曾多次透過入侵VPN、路由器、邊界防火牆等重要網路設備，以取得持續性的內部網路通道，並監控特定國家的政府機構或基礎設施營運商。
+針對這起事故的處理，該公司表示已對系統進行資料保存並著手調查，確認是否與前次資安事故有關。由於該公司今年1月發布重訊表示遭到供應鏈攻擊，且有個資外洩的情況，兩則重訊內容是否有所關鏈？引起外界的關注。
 
 **其他攻擊與威脅**
 
-◆**[駭客組織Fire Ant鎖定VMware虛擬化平臺而來，部署後門程式](https://thehackernews.com/2025/07/fire-ant-exploits-vmware-flaw-to.html)**
+◆**[Hive0156鎖定烏克蘭政府與軍事機構，意圖部署Remcos RAT](https://gbhackers.com/hive0156-hackers-targeting-government-and-military-organizations/)**
 
-◆**[中國駭客聲稱提供達賴喇嘛應用程式，對圖博從事間諜活動](https://thehackernews.com/2025/07/china-based-apts-deploy-fake-dalai-lama.html)**
+◆**[勒索軟體Medusa傳出攻擊NASCAR，索討400萬美元贖金](https://hackread.com/nascar-ransomware-confirm-medusa-ransomware-data-breach/)**
 
-◆**[駭客組織EncryptHub假借提供搶先體驗的遊戲，意圖散布惡意軟體](https://www.bleepingcomputer.com/news/security/hacker-sneaks-infostealer-malware-into-early-access-steam-game/)**
+◆**[惡意軟體Soco404和Koske鎖定Windows、Linux電腦而來，透過雲端服務散布](https://thehackernews.com/2025/07/soco404-and-koske-malware-target-cloud.html)**
+
+### **【漏洞與修補】**
+
+[**SonicWall警告SMA 100系列設備存在重大層級的任意檔案上傳漏洞**](https://www.ithome.com.tw/news/170270)
+
+7月23日資安業者SonicWall發布資安公告，指出旗下Secure Mobile Access（SMA）100系列的SSL VPN設備存在重大層級的後身分驗證任意檔案上傳漏洞CVE-2025-40599，由於7月中旬Google威脅情報團隊（GTIG）才揭露鎖定該廠牌SSL VPN設備的攻擊行動，駭客企圖部署惡意軟體Overstep，因此這份公告格外引起注意。
+
+問題出在SMA 100系列的網頁管理介面，取得管理權限的攻擊者能夠遠端利用漏洞，將任何檔案上傳到SSL VPN設備，從而達到遠端執行程式碼的目的，CVSS風險為9.1，影響執行10.2.1.15-81sv版以前韌體的SMA 210、410設備，以及虛擬設備版本500v，該公司發布新版10.2.1.15-81sv修補。值得留意的是，沒有其他替代的緩解措施可用，用戶應儘速套用新版韌體因應。
+
+針對GTIG揭露的資安事故，這份公告也列出SonicWall的正式回應，目前SonicWall沒有發現漏洞遭到積極利用的跡象，但保險起見，呼籲所有SMA 100系列用戶採取行動，根據GTIG提供的入侵指標（IoC），確認設備是否出現異常。
 
 **其他漏洞與修補**
 
-◆**[SonicWall SMA 100系列設備存在任意檔案上傳漏洞](https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-critical-rce-flaw-in-sma-100-VPN-appliances/)**
+◆**[彭博社開源資料庫Comdb2存在高風險漏洞，恐導致DoS攻擊](https://gbhackers.com/bloombergs-comdb2-vulnerable/)**
 
-◆**[Mitel整合式通訊系統MX-ONE存在重大漏洞，恐被用於繞過身分驗證](https://www.bleepingcomputer.com/news/security/mitel-warns-of-critical-mivoice-mx-one-authentication-bypass-flaw/)**
+### **【資安防禦措施】**
+
+[**美國女子協助北韓IT工作者滲透逾300家美國企業，判刑8年**](https://www.ithome.com.tw/news/170273)
+
+現年50歲的美國亞歷桑那州女子Christina Marie Chapman因協助北韓IT工作者於逾300家美國企業取得工作，設立筆電農場，創造超過1,700萬美元的非法收入，因共謀詐欺、身分竊盜及洗錢，被法官判刑102個月，支付逾17萬的罰款，以及沒收還沒寄出的近30萬美元。
+
+根據起訴書的內容，Chapman扮演了北韓IT工作者與美國企業之間的中介角色。她利用68名被盜的美國人身分，協助北韓IT工作者於309家美國企業及2家跨國企業取得工作，這些受害企業涵蓋了美國主要電視網路、一家矽谷科技公司、一家航空製造商及一家美國汽車製造商等。這些北韓IT工作者甚至列出了一份想要進入的企業清單，以作為滲透目標。
+
+Chapman亦經營筆電農場，專門接收並托管各大美國企業寄給這些北韓IT工作者的電腦，除了Chapman已轉寄至海外的49臺電腦之外，警方還在她家中找到逾90臺筆電。Chapman並以盜用的身分替北韓IT工作者接收工資支票，再將收益移轉給他們。
+
+**其他執法行動**
+
+◆**[執法單位起底勒索軟體BlackSuit的暗網網站](https://www.bleepingcomputer.com/news/security/law-enforcement-seizes-blacksuit-ransomware-leak-sites/)**
+
+### **【資安產業動態】**
+
+[**為保護用戶隱私，Brave、AdGuard加入封鎖Windows 11 Recall功能的行列**](https://www.ithome.com.tw/news/170279)
+
+微軟去年於開發者大會Build 2024前夕宣布[將為AI電腦Copilot+ PC加入Recall功能](https://www.ithome.com.tw/news/162988)，由於[該功能](https://www.ithome.com.tw/tags/recall)會記錄用戶所有活動，[引發外界擔心個資保護機制不夠完備](https://www.ithome.com.tw/news/163045)而延後推出，事隔一年，微軟在加強相關防護後，[重新對Windows 11 24H2用戶部署相關功能](https://www.ithome.com.tw/news/168628)，但部分應用程式開發商還是不買帳，繼即時通訊軟體Signal第一個宣布阻擋相關功能截取用戶聊天內容後，上週有瀏覽器及資安業者跟進。
+
+瀏覽器業者Brave於7月22日宣布，他們[預計於](https://github.com/brave/brave-browser/wiki/Brave-Release-Schedule)8月2日發布的1.81版當中，為Windows版加入關閉被Recall擷取上網內容的功能，此功能為預設開啟，若是用戶需要Recal記錄曾經開啟的分頁內容，也可手動關閉這項功能。Brave指出，具體來說，他們採取的做法，就是讓Windows以為用戶啟動隱私上網（Private Browsing）模式，使得Recall不會擷取所有視窗當中的分頁內容。
+
+附帶一提的是，廣告封鎖軟體開發商AdGuard也宣布跟進，將於7.21版預設封鎖Recall，並指出雖然它僅影響Copilot+ PC，但由於這些裝置很快就會成為市場主流，因此他們還是決定採取行動保護用戶。
 
 ### **近期資安日報**
+
+[**【7月25日】SharePoint零時差漏洞災情浮現，恐成為全球危機**](https://www.ithome.com.tw/news/170267)
 
 [**【7月24日】微軟支援身障者無障礙用途的UI自動化機制首遭惡意程式濫用**](https://www.ithome.com.tw/news/170243)
 
 [**【7月23日】3組中國駭客使用SharePoint零時差漏洞從事攻擊**](https://www.ithome.com.tw/news/170231)
-
-[**【7月22日】Dell傳出遭World Leaks勒索，測試環境資料外洩**](https://www.ithome.com.tw/news/170211)

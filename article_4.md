@@ -1,76 +1,86 @@
-Title: 【資安日報】7月29日，Scattered Spider鎖定VMware虛擬化平臺而來，並使用勒索軟體加密檔案
+Title: 【資安日報】7月30日，美國明尼蘇達州首府遭到網攻，進入緊急狀態、動員國民兵因應
 
-URL Source: https://www.ithome.com.tw/news/170302
+URL Source: https://www.ithome.com.tw/news/170328
 
-Published Time: Tue, 29 Jul 2025 23:09:43 GMT
+Published Time: Wed, 30 Jul 2025 23:09:58 GMT
 
 Markdown Content:
-惡意昭彰的駭客組織Scattered Spider（0ktapus、UNC3944、Octo Tempest），從今年4月攻擊多家英國零售業者引起關注，後續該組織又將範圍延伸到美國，究竟這些駭客如何得逞？這段期間曾多次提出警告的Google，近日公布調查結果。
+從上週末到今天，在法國、俄羅斯、美國發生多起與關鍵基礎設施（CI）有關的網路攻擊事故，其中苦主包含了俄羅斯航空業者Aeroflot、法國電信公司Orange、國防承包商Naval Group，以及美國明尼蘇達州首府聖保羅。
 
-另一方面，與中國有關的駭客組織Sliver Fox，也有研究人員公布長期追蹤的結果，指出這些駭客在2年裡設置逾2,800個網域名稱，用來散布多種惡意程式，其中仍有近十分之一的網域迄今仍被用於攻擊行動。
+其中，Aeroflot、Orange、聖保羅皆傳出影響運作的情況，最特別的是聖保羅的資安事故，由於事件規模及複雜程度已超出市政府的因應能力，明尼蘇達州州長罕見動員美國國民兵部隊來因應這起事故。
 
 ### **【攻擊與威脅】**
 
-[**Scattered Spider鎖定VMware vSphere而來，部署勒索軟體並竊取資料**](https://www.ithome.com.tw/news/170293)
+[**因應遭到網路攻擊，美明尼蘇達州動員國民兵部隊**](https://www.ithome.com.tw/news/170312)
 
-[![Image 1](https://s4.itho.me/sites/default/files/images/ransomware-attack-chain_max-2200x2200.png)](https://s4.itho.me/sites/default/files/images/ransomware-attack-chain_max-2200x2200.png)
+美國明尼蘇達州首府聖保羅（Saint Paul）上周五（7月25日）遭到駭客入侵，由於該事件的規模與複雜性已超出市府的應對能力，使得明尼蘇達州州長Tim Walz今日（7月30日）發布行政命令，動員美國國民兵（National Guard）部隊的網路保護資源，以應對鎖定聖保羅市的網路攻擊行動。
 
-今年4月開始，被稱為Scattered Spider、0ktapus、UNC3944、Octo Tempest的駭客組織，傳出針對英國零售業者瑪莎百貨（Marks & Spencer，M&S）、連鎖超市Co-op、精品百貨公司哈洛德（Harrods）發動網路攻擊，這些駭客成為勒索軟體DragonForce的加盟主，利用這款惡意程式犯案，後續Google警告這些駭客轉移目標，針對美國零售業、航空與交通運輸業而來，最近他們公布詳細的調查結果，揭露這些駭客的攻擊手法。
+根據聖保羅市長Melvin Carter周二（7月29日）發表的聲明，該市的網路安全保護系統是在上周五凌晨檢測到網路上的可疑行動，該市團隊立即與私人網路安全專家合作，迅速展開調查、評估並企圖控制局勢，之後才確定並非系統故障或技術錯誤，而是由一個老練的外部駭客故意展開的數位攻擊行動，鎖定了該市的資訊基礎設施。
 
-Google旗下的威脅情報團隊（GITG）指出，Scattered Spider向來不使用軟體弱點做為入侵受害組織的管道，而是針對IT服務臺（Help Desk）撥打電話，依照經過驗證的劇本進行網釣攻擊，從而繞過常見的資安防護機制，並採取寄生攻擊（LoL）的策略從事後續活動。
+此一攻擊迫使聖保羅市於7月28日全面關閉其資訊系統，以抑制威脅的擴散，然而，也因此導致全市建築中的Wi-Fi無線網路失效，圖書館管理系統中斷，以及大量應用程式暫時失去網路連線，接著宣布進入緊急狀態，以授權該市特定部門動員地方、州及聯邦合作夥伴的支援。
 
-一旦這些駭客在成功完成社交工程攻擊並取得有效使用者帳號，就會以此操縱受信任的管理系統，並透過控制AD來轉進VMware vSphere環境，建立從虛擬機器管理工具竊取機敏資料並部署勒索軟體的管道。GITG指出，這樣的做法完全不會產生入侵指標（IoC），並能繞過EDR等資安工具的偵測。
+[**法國電信公司Orange部分企業及消費者服務系統斷線數天，起因是該公司遭遇網攻**](https://www.ithome.com.tw/news/170317)
 
-[**駭客組織Silver Fox針對中文用戶散布Windows惡意程式**](https://www.ithome.com.tw/news/170281)
+法國電信巨擘Orange 說明公司上周遭到網路攻擊，造成企業及消費者服務系統中斷數天。
 
-專門蒐集網域情報的美國資安業者DomainTools最近揭露了駭客組織Silver Fox的惡意行為，指出位於中國時區的Silver Fox自2023年6月以來，便建立了超過2,800個用來散布Windows惡意程式的網域名稱，且直至今年6月，仍有266個網域積極參與惡意行動。
+該公司在7月25日偵測到IT系統遭到攻擊，安全及IT部門很快就隔離受影響的系統。但隔離措施造成Orange部份企業用戶的特定管理服務和平台以及數個消費者服務的運作，受影響的服務主要位於法國。Orange已經著手聯繫受影響的客戶。
 
-Silver Fox在註冊眾多的網站之後，將它們偽裝成程式下載頁面、更新提示、登入頁面、行銷及商業工具平臺，或是加密貨幣應用等，以誘導使用者下載惡意程式或輸入敏感資訊。包括Gmail、支付寶（Alipay）與Coinbase都是駭客假冒的對象。
+Orange團隊目前正致力於恢復營運，預計在7月30日早上逐步回復主要受影響的服務。該公司仍在調查此案，強調沒有證據顯示事件造成內部或客戶資料外洩。這家電信大廠沒有指明肇事者。
 
-駭客所使用的惡意程式家族涵蓋了遠端存取木馬Gh0stRAT、用來控制被駭裝置的ValleyRAT、商業化的遠端監控程式Remcos RAT、資訊竊取工具Lumma Stealer，以及可大量蒐集電腦帳密的RedLine Stealer等。
+[**法國國防業者Naval Group傳出遭駭，攻擊者竊得1 TB內部資料**](https://www.ithome.com.tw/news/170316)
+
+[![Image 1](https://s4.itho.me/sites/default/files/images/GwzFiY6WEAAGu8o.png)](https://s4.itho.me/sites/default/files/images/GwzFiY6WEAAGu8o.png)
+
+根據資安新聞網站Bleeping Computer的報導，有人在駭客論壇聲稱，他們從法國國營的國防公司Naval Group竊得1 TB資料。對此，Naval Group發布聲明，指出這是企圖破壞穩定，以及破壞他們名譽做出的攻擊，該公司表示目前IT系統並未出現遭到入侵的跡象，營運一切正常，他們已尋求外部專家協助調查，並與法國當局合作，確認這批資料是否從內部流出。
+
+這起事故發生在7月23日，名為Neferpitou的人士於駭客論壇Dark Forums聲稱，他們從Naval Group竊得一批資料，並提供13 GB檔案供買家檢驗。這些資料疑似與軍用船隻的機密資料、技術文件、用於開發的虛擬機器（內含模擬資料），以及內部通訊的內容。Neferpitou要求Naval Group在72小時內與他們進行談判，敲定勒索金額，但不久後，這些駭客公布整批資料，檔案大小為1 TB。
+
+值得留意的是，Thales於2022年曾遭勒索軟體LockBit 3.0攻擊，導致資料外洩，因此Bleeping Computer推測，這批檔案很有可能源自當時外流的資料。
+
+[**俄羅斯航空公司Aeroflot遭駭，近百航班受影響**](https://www.ithome.com.tw/news/170321)
+
+俄羅斯國營航空公司Aeroflot本周遭到駭客攻擊，導致數千臺系統無法運作，以及近百個航班被迫取消或延遲。
+
+事件發生在7月28日，Aeroflot發出聲明，指該公司資訊系統遭遇不明問題，將影響作業。西方新聞報導，100多個航班受到取消或延遲影響。俄國總檢察長辦公室證實事件出於駭客攻擊。俄羅斯官方說，此事件造成80多個航班延遲，60個航班被取消。根據Politico報導，事件不只影響俄羅斯航空本身，也波及子公司羅西亞航空（Rossiya）及勝利航空（Pobeda）。
+
+針對攻擊者的身分，烏克蘭駭客組織Silent Crow及白俄羅斯駭客組織Cyber-Partisans宣稱是他們所為。根據The Independent及路透社報導，這群駭客宣稱已入侵俄羅斯航空公司系統近一年，成功竊取20 TB資料，包含乘客與員工資料，摧毁7,000臺伺服器，且取得員工個人電腦控制權。
 
 **其他攻擊與威脅**
 
-◆**[勒索軟體BlackSuit成員傳出另起爐灶，打造Chaos並提供租用服務](https://www.darkreading.com/cyberattacks-data-breaches/chaos-ransomware-rises-blacksuit-falls)**
+◆**[勒索軟體Gunra開發Linux變種，可透過100個處理器執行序加密檔案](https://www.darkreading.com/threat-intelligence/nimble-gunra-ransomware-linux-variant)**
 
-◆**[WordPress外掛Post SMTP存在高風險漏洞，20萬網站恐面臨挾持風險](https://securityaffairs.com/180484/security/critical-wordpress-post-smtp-plugin-flaw-exposes-200k-sites-to-full-takeover.html)**
+◆**[WordPress外掛程式資料夾被植入後門程式，駭客意圖藉此以管理員身分存取網站](https://thehackernews.com/2025/07/hackers-deploy-stealth-backdoor-in.html)**
 
-◆**[法國國防業者Naval Group傳出遭駭，攻擊者竊得1 TB內部資料](https://www.bleepingcomputer.com/news/security/frances-warship-builder-naval-group-investigates-1tb-data-breach/)**
+◆**[SharePoint零時差漏洞ToolShell攻擊範圍擴大，駭客利用CMD執行惡意命令](https://gbhackers.com/multiple-hacker-groups-exploit-sharepoint-0-day-vulnerability/)**
 
-◆**[俄羅斯航空公司Aeroflot傳出遭網路攻擊，電腦系統面臨大規模中斷，被迫取消逾100個航班](https://www.securityweek.com/cyberattack-on-russian-airline-aeroflot-causes-the-cancellation-of-more-than-100-flights/)**
+◆**[中國駭客聲稱提供達賴喇嘛應用程式，對圖博散布Ghost RAT、PhantomNet](https://thehackernews.com/2025/07/china-based-apts-deploy-fake-dalai-lama.html)**
 
-◆**[列印管理軟體PaperCut存在高風險漏洞，CISA警告已被用於攻擊行動](https://www.bleepingcomputer.com/news/security/cisa-flags-papercut-rce-bug-as-exploited-in-attacks-patch-now/)**
+◆**[俄羅斯駭客APT28利用AI發動網釣，散布惡意軟體Lamehug](https://thehackernews.com/2025/07/cert-ua-discovers-lamehug-malware.html)**
 
 ### **【漏洞與修補】**
 
-[**Mitel整合式通訊系統MX-ONE存在重大漏洞，恐被用於繞過身分驗證**](https://www.ithome.com.tw/news/170271)
+[**研究人員揭露Gemini CLI漏洞，可竊取開發人員機密資訊**](https://www.ithome.com.tw/news/170322)
 
-加拿大電信業者Mitel發布資安公告，指出企業通訊平臺MX-ONE存在重大層級的身分驗證繞過資安漏洞，影響7.3至7.8 SP1版，CVSS風險達到9.4，該公司也已針對此漏洞發布修補程式，呼籲用戶要儘速採取行動因應。
+[![Image 2](https://s4.itho.me/sites/default/files/images/6883a92402a2f4700e57c196_AD_4nXdvEbsSkkYA61sjZu3Td8wQetbYr6vMixaFSdyvS946xgFGEB-IgIwCZWOx1ag7KCdv0EK3HF87XzZ92FC7zBEH1jFlT0ZyDKVwRDsAG6q05ULC1ZoNPhr10j5_x4JxTthjBm3BHQ.png)](https://s4.itho.me/sites/default/files/images/6883a92402a2f4700e57c196_AD_4nXdvEbsSkkYA61sjZu3Td8wQetbYr6vMixaFSdyvS946xgFGEB-IgIwCZWOx1ag7KCdv0EK3HF87XzZ92FC7zBEH1jFlT0ZyDKVwRDsAG6q05ULC1ZoNPhr10j5_x4JxTthjBm3BHQ.png)Google在6月25日開源了命令列AI工具Gemini CLI，以協助開發人員處理程式碼任務，然而，專注於雲端及AI安全性的資安新創Tracebit兩天後就發現安全漏洞，恐讓Gemini CLI用戶不明就裡地執行惡意指令，洩露機密資訊，並於本周揭露相關細節。
 
-MX-ONE是對話啟動協定（Session Initiation Protocol，SIP）為基礎打造的通訊平臺，主要的功能是提供網路語音通訊，例如VoIP、語音路由，以及通話管理，其特色是具備高度延展性，可支援數十萬個使用者，而受到大型企業組織採用。
+Tracebit指出，Gemini CLI在分析專案時，會自動讀取像README.md或GEMINI.md等說明文件。若檔案中藏有特定語句，即可能誘使Gemini於使用者未察覺下執行惡意指令；攻擊者可設計看似正常的程式專案，先引導使用者允許執行常見指令（如grep），再以類似格式包裝惡意內容，藉此繞過系統提醒；此外，還可利用大量空白字元混淆輸出畫面，使惡意行為難以察覺，進而竊取如API金鑰等敏感資訊。
 
-目前這項資安漏洞尚未取得CVE編號，該漏洞出現在MX-ONE的元件Provisioning Manager，起因是存取控制不當造成，一旦攻擊者成功利用，就能在未經授權的情況下進行身分驗證繞過攻擊，直接存取管理員的帳號。
+因此，倘若有駭客製作了惡意專案，並藉由GitHub、GitLab或其它開源社群散布，開發人員再以Gemini CLI讀取及分析，便可能受駭。Tracebit並以影片示範受害者如何在與Gemini CLI的互動中不知不覺地失去了系統憑證。
 
 ### **【資安產業動態】**
 
-[**強化Prompt安全性成當務之急，從MCP生命週期、Agentic系統構成看資安挑戰**](https://www.ithome.com.tw/news/170300)
+[**中華電信表示已完成商業及政府機關網站憑證換發**](https://www.ithome.com.tw/news/170301)
 
-隨著LLM（大型語言模型）的應用起飛，新技術帶來機會，也產生風險，今年Agentic AI的快速崛起，更進一步加劇這方面的風險，也引起全球企業的高度關注，因此，這一兩年以來，開始有越來越多廠商開發相關的資安防禦解決方案，像是AI護欄（AI Guardrails）、AI Gateway，Firewall for AI，而且，國外已有不少資安或新創廠商積極投入，國內卻寥寥可數，奧義智慧正是其中之一，7月1日宣布推出新世代AI防火牆安全模組。
+針對Google Chrome移除中華電信8月1日起核發新TLS憑證的預設信任，導致使用中華電信憑證的商業及政府機關網站受到影響，中華電信7月29日宣布已完成商業及政府機關網站憑證的更新，憑證效期可達一年，並強化內部憑證管理，爭取明年3月重新取得Chrome瀏覽器的預設信任。
 
-相隔幾天之後，在該公司舉辦的第二屆AI年會上，資料科學研發處處長楊政霖提出這方面的說明，幫助大家更清楚理解Agentic AI時代的資安挑戰，也提出相應的防禦思維與建議。
+由於先前在憑證營運管理的疏忽，中華電信也加強內部憑證營運管理制度，例如拉高內部「憑證政策管理委員會」的層級，導入第三方稽核，來確保符合透明、合規的要求，並且改善自動化憑證換發流程，提高憑證管理的效率，以爭取在明年3月回復Chrome預設信任名單之中，未來也會加強對國際憑證政策動態的關注，避免憑證營運管理無法跟上國際最新憑證政策。
 
-[**Google釋出OSS Rebuild確保開源套件安全**](https://www.ithome.com.tw/news/170265)
-
-Google釋出OSS Rebuild以協助開發人員確保開源套件的安全性，免於供應鏈攻擊，目前已支援PyPI、NPM和Crates.io套件。
-
-該公司指出，開源軟體已成現代應用開發的重要工具，然而開源工具普及使用也使其成為新的攻擊目標，像是透過感染眾多人使用的套件進行供應鏈攻擊。開源社群也分別發展出安全工具，如OpenSSF推出的安全檢查工具Security Scorecard、PyPI的Trusted Publisher和npm原生支援由OpenSSF主導的SLSA（Supply-chain Levels for Software Artifacts）框架等。但是這些計畫都只能解決部分問題，使專案的工作負擔，都落在接手的發布者或維護者身上。
-
-OSS Rebuild包括四個部分：自動建構定義、SLSA Provenance證明、建構驗證工具及可自行架設的基礎架構。技術層面而言，OSS Rebuild透過自動化與啟發式（heuristics）技術重建開源套件並驗證其來源與建構方式，以便使用者驗證套件來源、瞭解其建構流程，並可基於可信版本進行自訂建構或產生更詳細的SBOM（軟體物料清單）。
+由於中華電信簽發的TLS憑證以政府機關居多，數發部在今年3月掌握情資後已推動政府機關導入雙憑證機制，即在中華電信憑證之外，再導入TWCA憑證作為備援憑證，當單一憑證因效期或管理不合規而被瀏覽信移除信任後，可以切換至另一個憑證，提高政府機關網站的服務韌性。
 
 ### **近期資安日報**
+
+[**【7月29日】Scattered Spider鎖定VMware虛擬化平臺而來，並使用勒索軟體加密檔案**](https://www.ithome.com.tw/news/170302)
 
 [**【7月28日】勒索軟體ShinyHunters傳出對保險公司安聯人壽發動攻擊**](https://www.ithome.com.tw/news/170280)
 
 [**【7月25日】SharePoint零時差漏洞災情浮現，恐成為全球危機**](https://www.ithome.com.tw/news/170267)
-
-[**【7月24日】微軟支援身障者無障礙用途的UI自動化機制首遭惡意程式濫用**](https://www.ithome.com.tw/news/170243)

@@ -1,86 +1,90 @@
-Title: 【資安日報】7月30日，美國明尼蘇達州首府遭到網攻，進入緊急狀態、動員國民兵因應
+Title: 【資安日報】7月31日，駭客挾持ATM出奇招，於隔離網路部署實體後門
 
-URL Source: https://www.ithome.com.tw/news/170328
+URL Source: https://www.ithome.com.tw/news/170345
 
-Published Time: Wed, 30 Jul 2025 23:09:58 GMT
+Published Time: Thu, 31 Jul 2025 23:09:46 GMT
 
 Markdown Content:
-從上週末到今天，在法國、俄羅斯、美國發生多起與關鍵基礎設施（CI）有關的網路攻擊事故，其中苦主包含了俄羅斯航空業者Aeroflot、法國電信公司Orange、國防承包商Naval Group，以及美國明尼蘇達州首府聖保羅。
+本週有多家資安業者公布資安事故的調查結果，其中最為特別的是針對ATM的攻擊行動，揭露此事的資安業者Group-IB發現，駭客組織UNC2891透過嵌入式設備當做實體後門，從而對受害銀行的ATM系統上下其手，不過他們如何將設備部署到銀行內部？[資安新聞網站Bleeping Computer推測](https://www.bleepingcomputer.com/news/security/hackers-plant-4g-raspberry-pi-on-bank-network-in-failed-atm-heist/)，很可能是收買員工來達到目的。
 
-其中，Aeroflot、Orange、聖保羅皆傳出影響運作的情況，最特別的是聖保羅的資安事故，由於事件規模及複雜程度已超出市政府的因應能力，明尼蘇達州州長罕見動員美國國民兵部隊來因應這起事故。
+鎖定軟體套件開發者的攻擊行動也相當值得留意，我們上週報導針對NPM套件開發者的網釣攻擊，本週PyPI針對套件維護者提出警告，他們發現有人打造假的PyPI網站，想要騙取帳密資料。再者，利用SAP NetWeaver滿分漏洞，以及VMware虛擬化平臺已知漏洞的攻擊手法，也有資安業者公布新的調查結果。
 
-### **【攻擊與威脅】**
+### 【攻擊與威脅】
 
-[**因應遭到網路攻擊，美明尼蘇達州動員國民兵部隊**](https://www.ithome.com.tw/news/170312)
+[**駭客組織UNC2891打造挾持ATM的實體後門**](https://www.ithome.com.tw/news/170343)
 
-美國明尼蘇達州首府聖保羅（Saint Paul）上周五（7月25日）遭到駭客入侵，由於該事件的規模與複雜性已超出市府的應對能力，使得明尼蘇達州州長Tim Walz今日（7月30日）發布行政命令，動員美國國民兵（National Guard）部隊的網路保護資源，以應對鎖定聖保羅市的網路攻擊行動。
+[![Image 1](https://s4.itho.me/sites/default/files/images/UNC2891-4.png)](https://s4.itho.me/sites/default/files/images/UNC2891-4.png)
 
-根據聖保羅市長Melvin Carter周二（7月29日）發表的聲明，該市的網路安全保護系統是在上周五凌晨檢測到網路上的可疑行動，該市團隊立即與私人網路安全專家合作，迅速展開調查、評估並企圖控制局勢，之後才確定並非系統故障或技術錯誤，而是由一個老練的外部駭客故意展開的數位攻擊行動，鎖定了該市的資訊基礎設施。
+一般而言，駭客針對隔離網路環境發動攻擊，最常見的就是透過USB蠕蟲進行滲透，藉由USB儲存裝置被帶到隔離網路環境從事活動，但最近有資安業者發現相當不尋常的手法，竟是部署實體設備來達到目的。
 
-此一攻擊迫使聖保羅市於7月28日全面關閉其資訊系統，以抑制威脅的擴散，然而，也因此導致全市建築中的Wi-Fi無線網路失效，圖書館管理系統中斷，以及大量應用程式暫時失去網路連線，接著宣布進入緊急狀態，以授權該市特定部門動員地方、州及聯邦合作夥伴的支援。
-
-[**法國電信公司Orange部分企業及消費者服務系統斷線數天，起因是該公司遭遇網攻**](https://www.ithome.com.tw/news/170317)
-
-法國電信巨擘Orange 說明公司上周遭到網路攻擊，造成企業及消費者服務系統中斷數天。
-
-該公司在7月25日偵測到IT系統遭到攻擊，安全及IT部門很快就隔離受影響的系統。但隔離措施造成Orange部份企業用戶的特定管理服務和平台以及數個消費者服務的運作，受影響的服務主要位於法國。Orange已經著手聯繫受影響的客戶。
-
-Orange團隊目前正致力於恢復營運，預計在7月30日早上逐步回復主要受影響的服務。該公司仍在調查此案，強調沒有證據顯示事件造成內部或客戶資料外洩。這家電信大廠沒有指明肇事者。
-
-[**法國國防業者Naval Group傳出遭駭，攻擊者竊得1 TB內部資料**](https://www.ithome.com.tw/news/170316)
-
-[![Image 1](https://s4.itho.me/sites/default/files/images/GwzFiY6WEAAGu8o.png)](https://s4.itho.me/sites/default/files/images/GwzFiY6WEAAGu8o.png)
-
-根據資安新聞網站Bleeping Computer的報導，有人在駭客論壇聲稱，他們從法國國營的國防公司Naval Group竊得1 TB資料。對此，Naval Group發布聲明，指出這是企圖破壞穩定，以及破壞他們名譽做出的攻擊，該公司表示目前IT系統並未出現遭到入侵的跡象，營運一切正常，他們已尋求外部專家協助調查，並與法國當局合作，確認這批資料是否從內部流出。
-
-這起事故發生在7月23日，名為Neferpitou的人士於駭客論壇Dark Forums聲稱，他們從Naval Group竊得一批資料，並提供13 GB檔案供買家檢驗。這些資料疑似與軍用船隻的機密資料、技術文件、用於開發的虛擬機器（內含模擬資料），以及內部通訊的內容。Neferpitou要求Naval Group在72小時內與他們進行談判，敲定勒索金額，但不久後，這些駭客公布整批資料，檔案大小為1 TB。
+本週資安業者Group-IB發布部落格文章，針對專門鎖定自動櫃員機（ATM）的駭客組織UNC2891公布調查結果，指出這些以經濟利益為動機的駭客使用相當獨特且隱密的手法，試圖破壞銀行的基礎設施，其中的反鑑識手法過往未曾出現，後門程式無法透過處理程序列表掌握，其中的關鍵之一，就是使用嵌入式設備滲透實體網路環境，這樣的做法極為罕見。
 
 值得留意的是，Thales於2022年曾遭勒索軟體LockBit 3.0攻擊，導致資料外洩，因此Bleeping Computer推測，這批檔案很有可能源自當時外流的資料。
 
-[**俄羅斯航空公司Aeroflot遭駭，近百航班受影響**](https://www.ithome.com.tw/news/170321)
+駭客架設冒牌PyPI網站，企圖竊取套件開發者的帳密資料
 
-俄羅斯國營航空公司Aeroflot本周遭到駭客攻擊，導致數千臺系統無法運作，以及近百個航班被迫取消或延遲。
+駭客不斷鎖定開發人員經常使用的套件庫NPM、PyPI發動攻擊，其中一種最常見的手法，是利用域名搶注手法上架有問題的套件，藉此於開發人員的電腦部署惡意軟體，但最近有一波是鎖定套件維護者的網釣攻擊，之前有針對NPM熱門套件開發者的攻擊行動，如今駭客將目標轉向PyPI套件的開發者，使得PyPI管理群特別提出警告。
 
-事件發生在7月28日，Aeroflot發出聲明，指該公司資訊系統遭遇不明問題，將影響作業。西方新聞報導，100多個航班受到取消或延遲影響。俄國總檢察長辦公室證實事件出於駭客攻擊。俄羅斯官方說，此事件造成80多個航班延遲，60個航班被取消。根據Politico報導，事件不只影響俄羅斯航空本身，也波及子公司羅西亞航空（Rossiya）及勝利航空（Pobeda）。
+7月28日PyPI基金會發布部落格提出警告，有人鎖定最近幾天發布專案的PyPI維護者而來，利用套件裡的中繼資料取得電子郵件信箱，假借電子郵件驗證的名義寄信，值得留意的是，該「驗證信」來自[noreply@pypj.org](mailto:noreply@pypj.org)。
 
-針對攻擊者的身分，烏克蘭駭客組織Silent Crow及白俄羅斯駭客組織Cyber-Partisans宣稱是他們所為。根據The Independent及路透社報導，這群駭客宣稱已入侵俄羅斯航空公司系統近一年，成功竊取20 TB資料，包含乘客與員工資料，摧毁7,000臺伺服器，且取得員工個人電腦控制權。
+一旦收信人依照指示點選信中連結來驗證電子郵件信箱，他們就會被帶往偽裝成PyPI的釣魚網站，並要求執行登錄，若是收信人照做，他們發出的請求就會傳給真正的PyPI網站，使得收信人以為自己成功登錄PyPI（並完成驗證），但實際上，這麼做會將帳密提供給釣魚網站。
+
+[**SAP NetWeaver滿分漏洞遭到利用，駭客企圖散布惡意程式Auto-Color**](https://www.ithome.com.tw/news/170318)
+
+[![Image 2](https://s4.itho.me/sites/default/files/images/6888a0eaa370406afd285b15_Screenshot%202025-07-29%20at%2011_20_41.png)](https://s4.itho.me/sites/default/files/images/6888a0eaa370406afd285b15_Screenshot%202025-07-29%20at%2011_20_41.png)
+
+今年4月下旬SAP緊急修補應用程式伺服器NetWeaver重大層級資安漏洞CVE-2025-31324，由於這項漏洞被發現時，已被用於攻擊NetWeaver，再加上危險程度達到滿分10分，後續傳出中國駭客Chaya_004、CL-STA-0048、UNC5221、UNC5174、Earth Lamia，勒索軟體駭客「變臉（BianLian）」與RansomEXX也出手，將此漏洞用於實際攻擊，如今又有資安業者公布相關調查結果，指出他們看到駭客利用這項漏洞部署Linux後門程式。
+
+美國一家化學公司於今年4月，遭受名為Auto-Color的Linux後門程式攻擊，駭客於3天的時間裡，成功入侵該公司的網路環境，下載有問題的檔案，並試圖與Auto-Color的惡意基礎設施進行通訊。揭露此事的資安業者Darktrace指出，他們封鎖相關惡意行為、進行深度調查，發現駭客利用CVE-2025-31324，趁機滲透這家化學公司的NetWeaver主機。
+
+Darktrace之所以察覺這起事故，主要是因為他們的資安維運中心4月28日收到警報，有人從網際網路存取的主機下載可疑的ELF檔案，而此伺服器的用途，似乎是NetWeaver主機。經入侵指標（IoC）的比對，這個ELF執行檔就是Auto-Color。
+
+[**駭客組織Fire Ant鎖定VMware虛擬化平臺而來，利用已知漏洞入侵虛擬機器**](https://www.ithome.com.tw/news/170299)
+
+去年1月，Google揭露中國駭客UNC3886利用零時差漏洞CVE-2023-34048的攻擊行動，駭客從2021年開始用於對VMware虛擬化平臺vCenter下手，並在癱瘓VMware服務後的數分鐘內，部署後門程式。後續有其他駭客跟進，利用這項漏洞從事網路間諜活動。
+
+資安業者Sygnia自今年初開始，追蹤及回應由駭客組織Fire Ant的長期網路間諜活動，這些駭客專門針對VMware ESXi、vCenter，以及網路設備而來，透過Hypervisor層級的攻擊手法來迴避偵測，並持續在受害組織活動。根據駭客使用的工具與手法，Sygnia研判Fire Ant與UNC3886有所關連。
+
+針對駭客的攻擊途徑，Sygnia指出Fire Ant對於受害組織的ESXi主機與vCenter伺服器建立強大的控制機制，然後使用未經身分驗證的命令，從主機對用戶端下達，並透過特定帳密進行存取。這些駭客為了突破不同的網段並試圖存取隔離網路環境，採取複雜且隱密的手法，組成多階段攻擊鏈。他們運用虛擬化平臺及網路基礎設施作為初始存取、橫向移動、持續活動的管道。
 
 **其他攻擊與威脅**
 
-◆**[勒索軟體Gunra開發Linux變種，可透過100個處理器執行序加密檔案](https://www.darkreading.com/threat-intelligence/nimble-gunra-ransomware-linux-variant)**
-
-◆**[WordPress外掛程式資料夾被植入後門程式，駭客意圖藉此以管理員身分存取網站](https://thehackernews.com/2025/07/hackers-deploy-stealth-backdoor-in.html)**
-
-◆**[SharePoint零時差漏洞ToolShell攻擊範圍擴大，駭客利用CMD執行惡意命令](https://gbhackers.com/multiple-hacker-groups-exploit-sharepoint-0-day-vulnerability/)**
-
-◆**[中國駭客聲稱提供達賴喇嘛應用程式，對圖博散布Ghost RAT、PhantomNet](https://thehackernews.com/2025/07/china-based-apts-deploy-fake-dalai-lama.html)**
-
-◆**[俄羅斯駭客APT28利用AI發動網釣，散布惡意軟體Lamehug](https://thehackernews.com/2025/07/cert-ua-discovers-lamehug-malware.html)**
+◆**[IT服務供應商Ingram Micro傳出遭攻擊，勒索軟體SafePay聲稱竊得3.5 TB資料](https://www.bleepingcomputer.com/news/security/safepay-ransomware-threatens-to-leak-35tb-of-ingram-micro-data/)**
 
 ### **【漏洞與修補】**
 
-[**研究人員揭露Gemini CLI漏洞，可竊取開發人員機密資訊**](https://www.ithome.com.tw/news/170322)
+[**聯想桌機韌體存在可用以繞過開機防護的漏洞**](https://www.ithome.com.tw/news/170331)
 
-[![Image 2](https://s4.itho.me/sites/default/files/images/6883a92402a2f4700e57c196_AD_4nXdvEbsSkkYA61sjZu3Td8wQetbYr6vMixaFSdyvS946xgFGEB-IgIwCZWOx1ag7KCdv0EK3HF87XzZ92FC7zBEH1jFlT0ZyDKVwRDsAG6q05ULC1ZoNPhr10j5_x4JxTthjBm3BHQ.png)](https://s4.itho.me/sites/default/files/images/6883a92402a2f4700e57c196_AD_4nXdvEbsSkkYA61sjZu3Td8wQetbYr6vMixaFSdyvS946xgFGEB-IgIwCZWOx1ag7KCdv0EK3HF87XzZ92FC7zBEH1jFlT0ZyDKVwRDsAG6q05ULC1ZoNPhr10j5_x4JxTthjBm3BHQ.png)Google在6月25日開源了命令列AI工具Gemini CLI，以協助開發人員處理程式碼任務，然而，專注於雲端及AI安全性的資安新創Tracebit兩天後就發現安全漏洞，恐讓Gemini CLI用戶不明就裡地執行惡意指令，洩露機密資訊，並於本周揭露相關細節。
+聯想本周發布安全公告，提醒數款桌機韌體存在6項可讓攻擊者繞過安全開機（Secure Boot）防護機制的漏洞，可使其執行程式碼或讀取敏感資訊。
 
-Tracebit指出，Gemini CLI在分析專案時，會自動讀取像README.md或GEMINI.md等說明文件。若檔案中藏有特定語句，即可能誘使Gemini於使用者未察覺下執行惡意指令；攻擊者可設計看似正常的程式專案，先引導使用者允許執行常見指令（如grep），再以類似格式包裝惡意內容，藉此繞過系統提醒；此外，還可利用大量空白字元混淆輸出畫面，使惡意行為難以察覺，進而竊取如API金鑰等敏感資訊。
+這6項漏洞包含CVE-2025-4421、CVE-2025-4422、CVE-2025-4423、CVE-2025-4424、CVE-2025-4425、CVE-2025-4426。這批漏洞皆存在聯想桌機內建的Insyde BIOS中，影響產品包括Lenovo IdeaCentre及Yoga AiO產品部分機種，可使具備權限的本地攻擊者升級權限以讀取系統管理記憶體（SMRAM）內容，或在系統管理模式（SMM）中執行任意程式碼。
 
-因此，倘若有駭客製作了惡意專案，並藉由GitHub、GitLab或其它開源社群散布，開發人員再以Gemini CLI讀取及分析，便可能受駭。Tracebit並以影片示範受害者如何在與Gemini CLI的互動中不知不覺地失去了系統憑證。
+這批漏洞是由資安廠商Binarly通報，對於這些漏洞帶來的影響，他們指出，一旦運用這些漏洞，攻擊者可提升權限由ring-0到ring-2、藉此讀取SMRAM內容，或是在SMM模式下執行任意程式碼。
+
+**其他漏洞與修補**
+
+◆**[蘋果針對旗下電腦、行動裝置、電視盒、VR裝置、智慧手錶發布更新，修補已遭利用的Chrome零時差漏洞](https://www.bleepingcomputer.com/news/security/apple-patches-security-flaw-exploited-in-chrome-zero-day-attacks/)**
+
+◆**[針對6月思科公布的網路存取控制平臺ISE滿分漏洞，研究人員公布細節](https://www.bleepingcomputer.com/news/security/exploit-available-for-critical-cisco-ise-bug-exploited-in-attacks/)**
+
+◆**[VMware虛擬機器元件存在重大漏洞VGAuth，攻擊者有機會得到完整存取權限](https://gbhackers.com/critical-vgauth-flaw-in-vmware-tools/)**
+
+◆**[AI開發平臺Base44存在身分驗證漏洞，攻擊者有機會存取企業代管的應用程式](https://thehackernews.com/2025/07/wiz-uncovers-critical-access-bypass.html)**
 
 ### **【資安產業動態】**
 
-[**中華電信表示已完成商業及政府機關網站憑證換發**](https://www.ithome.com.tw/news/170301)
+[**Palo Alto Networks以250億美元併購身分安全業者CyberArk**](https://www.ithome.com.tw/news/170334)
 
-針對Google Chrome移除中華電信8月1日起核發新TLS憑證的預設信任，導致使用中華電信憑證的商業及政府機關網站受到影響，中華電信7月29日宣布已完成商業及政府機關網站憑證的更新，憑證效期可達一年，並強化內部憑證管理，爭取明年3月重新取得Chrome瀏覽器的預設信任。
+資安大廠Palo Alto Networks周三（7月30日）宣布，已和CyberArk簽定近250億美元併購協議，進軍身分安全方案領域，特別是解決企業引進AI代理人帶來的安全問題。
 
-由於先前在憑證營運管理的疏忽，中華電信也加強內部憑證營運管理制度，例如拉高內部「憑證政策管理委員會」的層級，導入第三方稽核，來確保符合透明、合規的要求，並且改善自動化憑證換發流程，提高憑證管理的效率，以爭取在明年3月回復Chrome預設信任名單之中，未來也會加強對國際憑證政策動態的關注，避免憑證營運管理無法跟上國際最新憑證政策。
+這紙協議下，Palo Alto Networks上周五收盤股價溢價26%，總計以每股45美元及交換股票的方式買下CyberArk，總價近250億美元。本交易已獲得雙方董事會的無異議通過，視交易條件滿足進度而定，預計在Palo Alto Networks會計年度2026年第二季完成。
 
-由於中華電信簽發的TLS憑證以政府機關居多，數發部在今年3月掌握情資後已推動政府機關導入雙憑證機制，即在中華電信憑證之外，再導入TWCA憑證作為備援憑證，當單一憑證因效期或管理不合規而被瀏覽信移除信任後，可以切換至另一個憑證，提高政府機關網站的服務韌性。
+本案是近年金額最大的資安併購案之一。其他大型併購還包括：Google Cloud今年3月以320億美元的現金買下雲端安全平臺Wiz、思科以280億美元併購資料分析業者Splunk以強化安全產品。其他還有2021年私募基金業者Thoma Bravo以123億美元買下電子郵件安全平臺Proofpoint，以及2019年博通（Broadcom）以107億美元併購Symantec的企業安全部門。
 
 ### **近期資安日報**
+
+[**【7月30日】美國明尼蘇達州首府遭到網攻，進入緊急狀態、動員國民兵因應**](https://www.ithome.com.tw/news/170328)
 
 [**【7月29日】Scattered Spider鎖定VMware虛擬化平臺而來，並使用勒索軟體加密檔案**](https://www.ithome.com.tw/news/170302)
 
 [**【7月28日】勒索軟體ShinyHunters傳出對保險公司安聯人壽發動攻擊**](https://www.ithome.com.tw/news/170280)
-
-[**【7月25日】SharePoint零時差漏洞災情浮現，恐成為全球危機**](https://www.ithome.com.tw/news/170267)

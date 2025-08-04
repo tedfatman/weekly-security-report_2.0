@@ -1,90 +1,86 @@
-Title: 【資安日報】7月31日，駭客挾持ATM出奇招，於隔離網路部署實體後門
+Title: 【資安日報】8月1日，俄羅斯駭客針對當地外交單位從事網路間諜活動
 
-URL Source: https://www.ithome.com.tw/news/170345
+URL Source: https://www.ithome.com.tw/news/170359
 
-Published Time: Thu, 31 Jul 2025 23:09:46 GMT
+Published Time: Fri, 01 Aug 2025 23:09:36 GMT
 
 Markdown Content:
-本週有多家資安業者公布資安事故的調查結果，其中最為特別的是針對ATM的攻擊行動，揭露此事的資安業者Group-IB發現，駭客組織UNC2891透過嵌入式設備當做實體後門，從而對受害銀行的ATM系統上下其手，不過他們如何將設備部署到銀行內部？[資安新聞網站Bleeping Computer推測](https://www.bleepingcomputer.com/news/security/hackers-plant-4g-raspberry-pi-on-bank-network-in-failed-atm-heist/)，很可能是收買員工來達到目的。
+為了掌握其他國家的情報，國家級駭客從事網路間諜活動的情況，在國際局勢不斷升溫之際，一直有相關資安事故傳出，但最近微軟揭露的攻擊行動相當特別，俄羅斯駭客針對各國駐俄外交單位下手，而且，他們動用了ISP與電信業者的環境來接觸攻擊目標。
 
-鎖定軟體套件開發者的攻擊行動也相當值得留意，我們上週報導針對NPM套件開發者的網釣攻擊，本週PyPI針對套件維護者提出警告，他們發現有人打造假的PyPI網站，想要騙取帳密資料。再者，利用SAP NetWeaver滿分漏洞，以及VMware虛擬化平臺已知漏洞的攻擊手法，也有資安業者公布新的調查結果。
+近期遭受執法壓力的勒索軟體BlackSuit也是本週受到關注的焦點，原因是思科發現，這些駭客早就做好準備，即使執法單位破壞他們的暗網網站，這些駭客疑似幾個月前就已另外成立新組織Chaos，並在駭客論壇尋找新的加盟主進行合作。
 
 ### 【攻擊與威脅】
 
-[**駭客組織UNC2891打造挾持ATM的實體後門**](https://www.ithome.com.tw/news/170343)
+[**俄羅斯駭客Secret Blizzard鎖定大使館而來，濫用ISP發動AiTM網釣**](https://www.ithome.com.tw/news/170355)
 
-[![Image 1](https://s4.itho.me/sites/default/files/images/UNC2891-4.png)](https://s4.itho.me/sites/default/files/images/UNC2891-4.png)
+[![Image 1](https://s4.itho.me/sites/default/files/images/Figure-1_-Secret-Blizzard-AiTM-i.png)](https://s4.itho.me/sites/default/files/images/Figure-1_-Secret-Blizzard-AiTM-i.png)
 
-一般而言，駭客針對隔離網路環境發動攻擊，最常見的就是透過USB蠕蟲進行滲透，藉由USB儲存裝置被帶到隔離網路環境從事活動，但最近有資安業者發現相當不尋常的手法，竟是部署實體設備來達到目的。
+自俄羅斯入侵烏克蘭之後，俄羅斯國家級駭客就不斷對協助烏克蘭的國家發動網路攻擊，如今他們為了收集其他國家的情報，竟然打算對各國駐俄大使館及外交單位，從事網路間諜活動，而且，還動用到網際網路服務供應商（ISP）的層級來犯案。
 
-本週資安業者Group-IB發布部落格文章，針對專門鎖定自動櫃員機（ATM）的駭客組織UNC2891公布調查結果，指出這些以經濟利益為動機的駭客使用相當獨特且隱密的手法，試圖破壞銀行的基礎設施，其中的反鑑識手法過往未曾出現，後門程式無法透過處理程序列表掌握，其中的關鍵之一，就是使用嵌入式設備滲透實體網路環境，這樣的做法極為罕見。
+微軟揭露俄羅斯駭客自2024年開始的一系列網路間諜活動，發起這些攻擊的團體被稱為Secret Blizzard、Turla、Waterbug、Venomous Bear，他們利用對手中間人（AiTM）手法，攻擊位於莫斯科的大使館、外交單位，以及其他敏感的組織，散布名為ApolloShadow的惡意程式。這些被駭客鎖定的目標存在共通點，就是他們相當仰賴當地的網際網路服務供應商。微軟強調，這是他們首度看到Secret Blizzard將攻擊行動提升到ISP層級的情況，代表使用當地ISP或是電信服務的外交人員，都有可能是這些駭客下手的目標。
 
-值得留意的是，Thales於2022年曾遭勒索軟體LockBit 3.0攻擊，導致資料外洩，因此Bleeping Computer推測，這批檔案很有可能源自當時外流的資料。
+這起事故被發現的時間在今年2月，當時微軟觀察到該組織針對位於莫斯科的大使館從事網路間諜活動，而最引起研究人員注意的部分，在於駭客假借卡巴斯基防毒軟體的名義，在受害電腦安裝根憑證，因為這麼做駭客有機會突破TLS及SSL加密防護機制，以明文的方式存取受害者的上網內容，甚至能進一步取得他們的Token或是帳密資料。
 
-駭客架設冒牌PyPI網站，企圖竊取套件開發者的帳密資料
+[**勒索軟體BlackSuit成員傳出另起爐灶，打造Chaos並提供租用服務**](https://www.ithome.com.tw/news/170323)
 
-駭客不斷鎖定開發人員經常使用的套件庫NPM、PyPI發動攻擊，其中一種最常見的手法，是利用域名搶注手法上架有問題的套件，藉此於開發人員的電腦部署惡意軟體，但最近有一波是鎖定套件維護者的網釣攻擊，之前有針對NPM熱門套件開發者的攻擊行動，如今駭客將目標轉向PyPI套件的開發者，使得PyPI管理群特別提出警告。
+[![Image 2](https://s4.itho.me/sites/default/files/images/data-src-image-bc13f8bb-852d-4a0d-84c0-4f9d26c215d2.jpeg)](https://s4.itho.me/sites/default/files/images/data-src-image-bc13f8bb-852d-4a0d-84c0-4f9d26c215d2.jpeg)
 
-7月28日PyPI基金會發布部落格提出警告，有人鎖定最近幾天發布專案的PyPI維護者而來，利用套件裡的中繼資料取得電子郵件信箱，假借電子郵件驗證的名義寄信，值得留意的是，該「驗證信」來自[noreply@pypj.org](mailto:noreply@pypj.org)。
+駭客組織遭受執法單位的壓力，在即將遭到圍剿的前夕另起爐灶，這樣的情況不時傳出，例如，7月宣布關閉業務的勒索軟體駭客組織Hunter International，今年初傳出已使用World Leaks的名號成立新的團隊，如今有另一個興起的勒索軟體Chaos，很可能就是近期執法單位出手的勒索軟體BlackSuit（Royal）前成員組成。
 
-一旦收信人依照指示點選信中連結來驗證電子郵件信箱，他們就會被帶往偽裝成PyPI的釣魚網站，並要求執行登錄，若是收信人照做，他們發出的請求就會傳給真正的PyPI網站，使得收信人以為自己成功登錄PyPI（並完成驗證），但實際上，這麼做會將帳密提供給釣魚網站。
+思科旗下的威脅情報團隊Talos近期揭露Chaos的攻擊手法，這些駭客通常運用洪水式垃圾郵件攻擊手法接觸受害者，藉著語音網釣得到受害組織的初期存取管道，並濫用遠端管理工具（RMM）持續連線，以及透過檔案共享軟體外傳竊得資料，這些駭客聲稱，他們大部分的受害組織位於美國，但英國、紐西蘭、印度也有企業組織受害。
 
-[**SAP NetWeaver滿分漏洞遭到利用，駭客企圖散布惡意程式Auto-Color**](https://www.ithome.com.tw/news/170318)
+針對攻擊者的身分，Talos指出，這個駭客組織與先前使用相同名稱的殭屍網路沒有直接關聯，他們根據勒索軟體加密機制、勒索訊息的結構、駭客使用的工具集，推測Chaos可能是BlackSuit前成員組成的新團體。
 
-[![Image 2](https://s4.itho.me/sites/default/files/images/6888a0eaa370406afd285b15_Screenshot%202025-07-29%20at%2011_20_41.png)](https://s4.itho.me/sites/default/files/images/6888a0eaa370406afd285b15_Screenshot%202025-07-29%20at%2011_20_41.png)
+[**開源木馬程式AsyncRAT衍生逾30款分支惡意軟體**](https://www.ithome.com.tw/news/170093)
 
-今年4月下旬SAP緊急修補應用程式伺服器NetWeaver重大層級資安漏洞CVE-2025-31324，由於這項漏洞被發現時，已被用於攻擊NetWeaver，再加上危險程度達到滿分10分，後續傳出中國駭客Chaya_004、CL-STA-0048、UNC5221、UNC5174、Earth Lamia，勒索軟體駭客「變臉（BianLian）」與RansomEXX也出手，將此漏洞用於實際攻擊，如今又有資安業者公布相關調查結果，指出他們看到駭客利用這項漏洞部署Linux後門程式。
+[![Image 3](https://s4.itho.me/sites/default/files/images/AsyncRAT-figure-8.png)](https://s4.itho.me/sites/default/files/images/AsyncRAT-figure-8.png)
 
-美國一家化學公司於今年4月，遭受名為Auto-Color的Linux後門程式攻擊，駭客於3天的時間裡，成功入侵該公司的網路環境，下載有問題的檔案，並試圖與Auto-Color的惡意基礎設施進行通訊。揭露此事的資安業者Darktrace指出，他們封鎖相關惡意行為、進行深度調查，發現駭客利用CVE-2025-31324，趁機滲透這家化學公司的NetWeaver主機。
+許多自由軟體採用開放原始碼的方式，賦與使用者高度自由，不僅能夠使用，甚至能進一步修改、複製，以及散布，從而促使有能力開發的使用者加入改良的行列，而能夠帶來創新、降低成本、提升軟體的品質，然而這種開源的做法若是用於惡意軟體，就有可能加速這類工具的散布，導致造成的威脅變得更加廣泛。
 
-Darktrace之所以察覺這起事故，主要是因為他們的資安維運中心4月28日收到警報，有人從網際網路存取的主機下載可疑的ELF檔案，而此伺服器的用途，似乎是NetWeaver主機。經入侵指標（IoC）的比對，這個ELF執行檔就是Auto-Color。
+例如，最近資安業者ESET公布對於惡意軟體AsyncRAT的身世調查，就是典型的例子。AsyncRAT是非同步遠端存取木馬程式的縮寫，以C#開發而成，於2019年在GitHub儲存庫發表，如今至少衍生出超過30款惡意程式，其中最廣泛受到利用的變種是DCRat和VenomRAT。
 
-[**駭客組織Fire Ant鎖定VMware虛擬化平臺而來，利用已知漏洞入侵虛擬機器**](https://www.ithome.com.tw/news/170299)
-
-去年1月，Google揭露中國駭客UNC3886利用零時差漏洞CVE-2023-34048的攻擊行動，駭客從2021年開始用於對VMware虛擬化平臺vCenter下手，並在癱瘓VMware服務後的數分鐘內，部署後門程式。後續有其他駭客跟進，利用這項漏洞從事網路間諜活動。
-
-資安業者Sygnia自今年初開始，追蹤及回應由駭客組織Fire Ant的長期網路間諜活動，這些駭客專門針對VMware ESXi、vCenter，以及網路設備而來，透過Hypervisor層級的攻擊手法來迴避偵測，並持續在受害組織活動。根據駭客使用的工具與手法，Sygnia研判Fire Ant與UNC3886有所關連。
-
-針對駭客的攻擊途徑，Sygnia指出Fire Ant對於受害組織的ESXi主機與vCenter伺服器建立強大的控制機制，然後使用未經身分驗證的命令，從主機對用戶端下達，並透過特定帳密進行存取。這些駭客為了突破不同的網段並試圖存取隔離網路環境，採取複雜且隱密的手法，組成多階段攻擊鏈。他們運用虛擬化平臺及網路基礎設施作為初始存取、橫向移動、持續活動的管道。
+ESET特別提及，惡意程式數量居次的DCRat，其開發團隊對於AsyncRAT改良多項功能，其中一項是用於傳輸的資料結構，他們導入了另一個開源程式庫MessagePack，使得二進位資料序列化處理更有效率。
 
 **其他攻擊與威脅**
 
-◆**[IT服務供應商Ingram Micro傳出遭攻擊，勒索軟體SafePay聲稱竊得3.5 TB資料](https://www.bleepingcomputer.com/news/security/safepay-ransomware-threatens-to-leak-35tb-of-ingram-micro-data/)**
+◆**[美國警告Scattered Spider攻擊升溫，鎖定外包IT服務供應商而來](https://www.cisa.gov/news-events/alerts/2025/07/29/cisa-and-partners-release-updated-advisory-scattered-spider-group)**
 
-### **【漏洞與修補】**
+◆**[與駭客組織Silk Typhoon有關的中國公司為網路間諜工具申請專利](https://thehackernews.com/2025/07/chinese-firms-linked-to-silk-typhoon.html)**
 
-[**聯想桌機韌體存在可用以繞過開機防護的漏洞**](https://www.ithome.com.tw/news/170331)
+◆**[惡意軟體Jsceal冒充加密貨幣交易工具，透過臉書廣告散布](https://thehackernews.com/2025/07/hackers-use-facebook-ads-to-spread.html)**
 
-聯想本周發布安全公告，提醒數款桌機韌體存在6項可讓攻擊者繞過安全開機（Secure Boot）防護機制的漏洞，可使其執行程式碼或讀取敏感資訊。
+### 【資料外洩及隱私保護】
 
-這6項漏洞包含CVE-2025-4421、CVE-2025-4422、CVE-2025-4423、CVE-2025-4424、CVE-2025-4425、CVE-2025-4426。這批漏洞皆存在聯想桌機內建的Insyde BIOS中，影響產品包括Lenovo IdeaCentre及Yoga AiO產品部分機種，可使具備權限的本地攻擊者升級權限以讀取系統管理記憶體（SMRAM）內容，或在系統管理模式（SMM）中執行任意程式碼。
+[**ChatGPT分享連結功能可讓Google搜尋到用戶對話，OpenAI緊急關閉**](https://www.ithome.com.tw/news/170351)
 
-這批漏洞是由資安廠商Binarly通報，對於這些漏洞帶來的影響，他們指出，一旦運用這些漏洞，攻擊者可提升權限由ring-0到ring-2、藉此讀取SMRAM內容，或是在SMM模式下執行任意程式碼。
+一般而言，Google能搜尋到X或臉書平臺上張貼的內容，但如今Google竟然也可以搜尋到某些人和ChatGPT的私人對話，原因出在用戶使用了分享連結（share link）實驗性功能。
+
+分享連結功能是ChatGPT的功能之一。分享連結允許用戶將他和這個聊天機器人的對話以連結形式分享給他人。擁有這個連結的人就能讀取這些對話內容。雖然OpenAI提醒使用者不要將隱私資訊輸入ChatGPT，但總是會有用戶忽略這項警告。如果用戶使用分享連結功能產生URL，並將URL張貼在社群網站或其他公開平臺上，就可能被Google或其他搜尋引擎索引，變成可被公開搜尋的內容。
+
+近日Reddit用戶發現，只要在Google搜尋上限定搜尋「site:chatgpt/share」網站，再加上想要的關鍵詞，即可搜尋到其他用戶的ChatGPT對話內容。用戶運用這方法找到7萬多則內容，一旦這些內容被索引，用戶本人即使刪除自己的帳號，也無法收回已公開的資訊內容。消息曝光後，OpenAI已經將分享連結功能移除。
+
+[**徵信社從駭客網站取得臺灣民眾個資，並轉賣給他人牟利**](https://www.ithome.com.tw/news/170357)
+
+[![Image 4](https://s4.itho.me/sites/default/files/images/20250718-.jpg)](https://s4.itho.me/sites/default/files/images/20250718-.jpg)
+
+2022年10月傳出有人在駭客論壇BreachForums兜售我國的戶政資料，引發軒然大波，後來一名電腦工程師因好奇買來比對遭到檢察管起訴，事隔兩年，有人透過創世紀市集（Genesis Market）取得國人個資，且其中資料範圍相當廣，涵蓋身分證字號、手機號碼、社群網站存取權限，以及電商網站蝦皮、露天的帳密資料，但嫌犯取得這些個資的目的尚不得而知，如今有徵信社購買這類資料用於相關業務，甚至進一步在網站上兜售牟利。
+
+7月18日內政部警政署刑事警察局宣布，他們破獲徵信社販售個資的案件，曾擔任徵信社分公司的陳姓負責人透過公司雇用的工程師，於駭客網站買到9,300萬筆民眾個資，提供員工使用，並涉嫌在公司網站兜售。刑事局逮捕10人並移送檢方偵訊。
+
+針對這起事故的調查緣由，刑事局表示他們接獲情資，有不法集團將非法取得的民眾個資存放於特定的私人網站主機，經過專案小組調查後發現，此資料庫為臺中知名徵信社所有，為廖姓網站工程師透過非法管道購買，以約新臺幣15萬元的加密貨幣的代價，購得逾9,300萬筆個資。該工程師架設網站並建置系統，只要有徵信社員工有業務需求，就能透過該系統調閱民眾個資進行徵信。此外，該名工程師也在網站上標售這批資料。
 
 **其他漏洞與修補**
 
-◆**[蘋果針對旗下電腦、行動裝置、電視盒、VR裝置、智慧手錶發布更新，修補已遭利用的Chrome零時差漏洞](https://www.bleepingcomputer.com/news/security/apple-patches-security-flaw-exploited-in-chrome-zero-day-attacks/)**
+◆**[針對今年3月修補的macOS資安漏洞Sploitlight，通報此事的微軟公布細節](https://www.bleepingcomputer.com/news/security/microsoft-macos-sploitlight-flaw-leaks-apple-intelligence-data/)**
 
-◆**[針對6月思科公布的網路存取控制平臺ISE滿分漏洞，研究人員公布細節](https://www.bleepingcomputer.com/news/security/exploit-available-for-critical-cisco-ise-bug-exploited-in-attacks/)**
+**其他資安產業動態**
 
-◆**[VMware虛擬機器元件存在重大漏洞VGAuth，攻擊者有機會得到完整存取權限](https://gbhackers.com/critical-vgauth-flaw-in-vmware-tools/)**
-
-◆**[AI開發平臺Base44存在身分驗證漏洞，攻擊者有機會存取企業代管的應用程式](https://thehackernews.com/2025/07/wiz-uncovers-critical-access-bypass.html)**
-
-### **【資安產業動態】**
-
-[**Palo Alto Networks以250億美元併購身分安全業者CyberArk**](https://www.ithome.com.tw/news/170334)
-
-資安大廠Palo Alto Networks周三（7月30日）宣布，已和CyberArk簽定近250億美元併購協議，進軍身分安全方案領域，特別是解決企業引進AI代理人帶來的安全問題。
-
-這紙協議下，Palo Alto Networks上周五收盤股價溢價26%，總計以每股45美元及交換股票的方式買下CyberArk，總價近250億美元。本交易已獲得雙方董事會的無異議通過，視交易條件滿足進度而定，預計在Palo Alto Networks會計年度2026年第二季完成。
-
-本案是近年金額最大的資安併購案之一。其他大型併購還包括：Google Cloud今年3月以320億美元的現金買下雲端安全平臺Wiz、思科以280億美元併購資料分析業者Splunk以強化安全產品。其他還有2021年私募基金業者Thoma Bravo以123億美元買下電子郵件安全平臺Proofpoint，以及2019年博通（Broadcom）以107億美元併購Symantec的企業安全部門。
+◆**[CISA開源惡意軟體鑑識平臺Thorium](https://www.bleepingcomputer.com/news/security/cisa-open-sources-thorium-platform-for-malware-forensic-analysis/)**
 
 ### **近期資安日報**
+
+[**【7月31日】駭客挾持ATM出奇招，於隔離網路部署實體後門**](https://www.ithome.com.tw/news/170345)
 
 [**【7月30日】美國明尼蘇達州首府遭到網攻，進入緊急狀態、動員國民兵因應**](https://www.ithome.com.tw/news/170328)
 
 [**【7月29日】Scattered Spider鎖定VMware虛擬化平臺而來，並使用勒索軟體加密檔案**](https://www.ithome.com.tw/news/170302)
-
-[**【7月28日】勒索軟體ShinyHunters傳出對保險公司安聯人壽發動攻擊**](https://www.ithome.com.tw/news/170280)

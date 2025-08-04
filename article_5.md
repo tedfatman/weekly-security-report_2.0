@@ -1,90 +1,76 @@
-Title: 【資安日報】7月28日，勒索軟體ShinyHunters傳出對保險公司安聯人壽發動攻擊
+Title: 【資安日報】7月29日，Scattered Spider鎖定VMware虛擬化平臺而來，並使用勒索軟體加密檔案
 
-URL Source: https://www.ithome.com.tw/news/170280
+URL Source: https://www.ithome.com.tw/news/170302
 
-Published Time: Mon, 28 Jul 2025 23:10:49 GMT
+Published Time: Tue, 29 Jul 2025 23:09:43 GMT
 
 Markdown Content:
-上週末有兩則重大的消息引起資安圈關注，其中一起是安聯人壽美國分公司因遭受網路攻擊向美國政府通報資料外洩事故的情況，另一則消息則與北韓IT工作者有關，美國政府逮捕一名涉嫌經營筆電農場協助犯案的女性共犯。
+惡意昭彰的駭客組織Scattered Spider（0ktapus、UNC3944、Octo Tempest），從今年4月攻擊多家英國零售業者引起關注，後續該組織又將範圍延伸到美國，究竟這些駭客如何得逞？這段期間曾多次提出警告的Google，近日公布調查結果。
 
-回顧這幾天國內發生的資安新聞，有一個消息與個資外洩有關：易飛旅遊（易飛網）上週五突然發布資安重訊，原因是他們獲報部分客戶發現自己個資外流的現象，但是否與今年1月發生的供應鏈攻擊有關，有待進一步釐清。
+另一方面，與中國有關的駭客組織Sliver Fox，也有研究人員公布長期追蹤的結果，指出這些駭客在2年裡設置逾2,800個網域名稱，用來散布多種惡意程式，其中仍有近十分之一的網域迄今仍被用於攻擊行動。
 
 ### **【攻擊與威脅】**
 
-[**安聯人壽美國分公司傳出遭勒索軟體ShinyHunters攻擊，140萬人個資恐外洩**](https://www.ithome.com.tw/news/170278)
+[**Scattered Spider鎖定VMware vSphere而來，部署勒索軟體並竊取資料**](https://www.ithome.com.tw/news/170293)
 
-精品業者Louis Vuitton（LV）自7月初開始，接連傳出臺灣、韓國、英國等多個國家的分公司遭到入侵，導致部分客戶資料外洩，背後發動攻擊的駭客組織疑為勒索軟體ShinyHunters，原因可能與該公司使用的第三方服務被駭有關，前兩天傳出這些駭客也對保險業者下手的情況。
+[![Image 1](https://s4.itho.me/sites/default/files/images/ransomware-attack-chain_max-2200x2200.png)](https://s4.itho.me/sites/default/files/images/ransomware-attack-chain_max-2200x2200.png)
 
-根據科技新聞網站TechCrunch、Bleeping Computer報導，安聯人壽（Allianz Life）上週末向美國緬因州總檢察長辦公室通報，他們在7月16日出現外部系統遭到駭客攻擊，導致客戶資料外洩，但該公司未透露多少人受到影響。
+今年4月開始，被稱為Scattered Spider、0ktapus、UNC3944、Octo Tempest的駭客組織，傳出針對英國零售業者瑪莎百貨（Marks & Spencer，M&S）、連鎖超市Co-op、精品百貨公司哈洛德（Harrods）發動網路攻擊，這些駭客成為勒索軟體DragonForce的加盟主，利用這款惡意程式犯案，後續Google警告這些駭客轉移目標，針對美國零售業、航空與交通運輸業而來，最近他們公布詳細的調查結果，揭露這些駭客的攻擊手法。
 
-TechCrunch取得安聯人壽發言人Brett Weinberg的說法，駭客攻擊的目標，是該公司的客戶管理系統（CRM），此為以雲端服務為基礎的第三方服務。對方取得CRM的資料庫內容，有機會濫用客戶、金融專家、特定員工的個資，進行社交工程攻擊。
+Google旗下的威脅情報團隊（GITG）指出，Scattered Spider向來不使用軟體弱點做為入侵受害組織的管道，而是針對IT服務臺（Help Desk）撥打電話，依照經過驗證的劇本進行網釣攻擊，從而繞過常見的資安防護機制，並採取寄生攻擊（LoL）的策略從事後續活動。
 
-[**駭客組織UNG0002鎖定中國、香港、巴基斯坦，利用LNK檔案從事攻擊**](https://www.ithome.com.tw/news/170213)
+一旦這些駭客在成功完成社交工程攻擊並取得有效使用者帳號，就會以此操縱受信任的管理系統，並透過控制AD來轉進VMware vSphere環境，建立從虛擬機器管理工具竊取機敏資料並部署勒索軟體的管道。GITG指出，這樣的做法完全不會產生入侵指標（IoC），並能繞過EDR等資安工具的偵測。
 
-[![Image 1](https://s4.itho.me/sites/default/files/images/UNG0002-3.png)](https://s4.itho.me/sites/default/files/images/UNG0002-3.png)
+[**駭客組織Silver Fox針對中文用戶散布Windows惡意程式**](https://www.ithome.com.tw/news/170281)
 
-去年10月資安業者Seqrite揭露攻擊行動Operation Cobalt Whisper，駭客針對香港與巴基斯坦而來，大部分的目標是關鍵基礎設施，如今研究人員循線追查，指出這些駭客今年再度犯案，結合ClickFix手法網路釣魚從事新一波活動Operation AmberMist。
+專門蒐集網域情報的美國資安業者DomainTools最近揭露了駭客組織Silver Fox的惡意行為，指出位於中國時區的Silver Fox自2023年6月以來，便建立了超過2,800個用來散布Windows惡意程式的網域名稱，且直至今年6月，仍有266個網域積極參與惡意行動。
 
-這個組織被命名為UNG0002，他們以網路間諜活動，主要的活動範圍涵蓋香港、巴基斯坦、中國，以及多個亞洲國家及地區。這些駭客偏好使用Windows捷徑檔（LNK）、VBScript指令碼，以及Cobalt Strike與Metsploit兩款滲透測試工具，並主要以應徵工作為誘餌接觸受害者。
+Silver Fox在註冊眾多的網站之後，將它們偽裝成程式下載頁面、更新提示、登入頁面、行銷及商業工具平臺，或是加密貨幣應用等，以誘導使用者下載惡意程式或輸入敏感資訊。包括Gmail、支付寶（Alipay）與Coinbase都是駭客假冒的對象。
 
-USG002前後兩波攻擊活動何時開始？持續多久？Operation Cobalt Whisper發生在去年5月至9月，駭客主要透過20種感染鏈對國防、電工、民航組織而來，但後來發生在今年1月至5月的Operation AmberMist，他們將攻擊範圍延伸到電玩、軟體開發、學術機構，並使用Shadow RAT、Blister DLL、INET RAT等輕量級的作案工具。
-
-[**易飛網傳出客戶資料外洩**](https://mopsov.twse.com.tw/mops/web/ajax_t05sr01_1?firstin=true&stp=1&step=1&SEQ_NO=1&SPOKE_TIME=184602&SPOKE_DATE=20250725&COMPANY_ID=2734)
-
-7月25日易飛旅遊（易飛網）於股市公開觀測站發布重大訊息，指出有客戶向他們反映自己的個資外洩的情況，這些客戶察覺的原因，就是他們遭遇疑似第三人取得相關資料並向他們聯繫的情況。易飛旅遊此次重訊提到的前次資安事故，有可能是指該公司[今年1月](https://www.ithome.com.tw/news/166852)發布重訊表示遭到供應鏈攻擊，且有個資外洩的情況。然而，不論此次為舊案或新發生的事故，關鍵仍在於業者必須負起責任、採取更有效的行動，唯有強化事前預防、事中察覺，才能真正降低事後的處理負擔。
-
-針對這起事故的處理，該公司表示已對系統進行資料保存並著手調查，確認是否與前次資安事故有關。由於該公司今年1月發布重訊表示遭到供應鏈攻擊，且有個資外洩的情況，兩則重訊內容是否有所關鏈？引起外界的關注。
+駭客所使用的惡意程式家族涵蓋了遠端存取木馬Gh0stRAT、用來控制被駭裝置的ValleyRAT、商業化的遠端監控程式Remcos RAT、資訊竊取工具Lumma Stealer，以及可大量蒐集電腦帳密的RedLine Stealer等。
 
 **其他攻擊與威脅**
 
-◆**[Hive0156鎖定烏克蘭政府與軍事機構，意圖部署Remcos RAT](https://gbhackers.com/hive0156-hackers-targeting-government-and-military-organizations/)**
+◆**[勒索軟體BlackSuit成員傳出另起爐灶，打造Chaos並提供租用服務](https://www.darkreading.com/cyberattacks-data-breaches/chaos-ransomware-rises-blacksuit-falls)**
 
-◆**[勒索軟體Medusa傳出攻擊NASCAR，索討400萬美元贖金](https://hackread.com/nascar-ransomware-confirm-medusa-ransomware-data-breach/)**
+◆**[WordPress外掛Post SMTP存在高風險漏洞，20萬網站恐面臨挾持風險](https://securityaffairs.com/180484/security/critical-wordpress-post-smtp-plugin-flaw-exposes-200k-sites-to-full-takeover.html)**
 
-◆**[惡意軟體Soco404和Koske鎖定Windows、Linux電腦而來，透過雲端服務散布](https://thehackernews.com/2025/07/soco404-and-koske-malware-target-cloud.html)**
+◆**[法國國防業者Naval Group傳出遭駭，攻擊者竊得1 TB內部資料](https://www.bleepingcomputer.com/news/security/frances-warship-builder-naval-group-investigates-1tb-data-breach/)**
+
+◆**[俄羅斯航空公司Aeroflot傳出遭網路攻擊，電腦系統面臨大規模中斷，被迫取消逾100個航班](https://www.securityweek.com/cyberattack-on-russian-airline-aeroflot-causes-the-cancellation-of-more-than-100-flights/)**
+
+◆**[列印管理軟體PaperCut存在高風險漏洞，CISA警告已被用於攻擊行動](https://www.bleepingcomputer.com/news/security/cisa-flags-papercut-rce-bug-as-exploited-in-attacks-patch-now/)**
 
 ### **【漏洞與修補】**
 
-[**SonicWall警告SMA 100系列設備存在重大層級的任意檔案上傳漏洞**](https://www.ithome.com.tw/news/170270)
+[**Mitel整合式通訊系統MX-ONE存在重大漏洞，恐被用於繞過身分驗證**](https://www.ithome.com.tw/news/170271)
 
-7月23日資安業者SonicWall發布資安公告，指出旗下Secure Mobile Access（SMA）100系列的SSL VPN設備存在重大層級的後身分驗證任意檔案上傳漏洞CVE-2025-40599，由於7月中旬Google威脅情報團隊（GTIG）才揭露鎖定該廠牌SSL VPN設備的攻擊行動，駭客企圖部署惡意軟體Overstep，因此這份公告格外引起注意。
+加拿大電信業者Mitel發布資安公告，指出企業通訊平臺MX-ONE存在重大層級的身分驗證繞過資安漏洞，影響7.3至7.8 SP1版，CVSS風險達到9.4，該公司也已針對此漏洞發布修補程式，呼籲用戶要儘速採取行動因應。
 
-問題出在SMA 100系列的網頁管理介面，取得管理權限的攻擊者能夠遠端利用漏洞，將任何檔案上傳到SSL VPN設備，從而達到遠端執行程式碼的目的，CVSS風險為9.1，影響執行10.2.1.15-81sv版以前韌體的SMA 210、410設備，以及虛擬設備版本500v，該公司發布新版10.2.1.15-81sv修補。值得留意的是，沒有其他替代的緩解措施可用，用戶應儘速套用新版韌體因應。
+MX-ONE是對話啟動協定（Session Initiation Protocol，SIP）為基礎打造的通訊平臺，主要的功能是提供網路語音通訊，例如VoIP、語音路由，以及通話管理，其特色是具備高度延展性，可支援數十萬個使用者，而受到大型企業組織採用。
 
-針對GTIG揭露的資安事故，這份公告也列出SonicWall的正式回應，目前SonicWall沒有發現漏洞遭到積極利用的跡象，但保險起見，呼籲所有SMA 100系列用戶採取行動，根據GTIG提供的入侵指標（IoC），確認設備是否出現異常。
-
-**其他漏洞與修補**
-
-◆**[彭博社開源資料庫Comdb2存在高風險漏洞，恐導致DoS攻擊](https://gbhackers.com/bloombergs-comdb2-vulnerable/)**
-
-### **【資安防禦措施】**
-
-[**美國女子協助北韓IT工作者滲透逾300家美國企業，判刑8年**](https://www.ithome.com.tw/news/170273)
-
-現年50歲的美國亞歷桑那州女子Christina Marie Chapman因協助北韓IT工作者於逾300家美國企業取得工作，設立筆電農場，創造超過1,700萬美元的非法收入，因共謀詐欺、身分竊盜及洗錢，被法官判刑102個月，支付逾17萬的罰款，以及沒收還沒寄出的近30萬美元。
-
-根據起訴書的內容，Chapman扮演了北韓IT工作者與美國企業之間的中介角色。她利用68名被盜的美國人身分，協助北韓IT工作者於309家美國企業及2家跨國企業取得工作，這些受害企業涵蓋了美國主要電視網路、一家矽谷科技公司、一家航空製造商及一家美國汽車製造商等。這些北韓IT工作者甚至列出了一份想要進入的企業清單，以作為滲透目標。
-
-Chapman亦經營筆電農場，專門接收並托管各大美國企業寄給這些北韓IT工作者的電腦，除了Chapman已轉寄至海外的49臺電腦之外，警方還在她家中找到逾90臺筆電。Chapman並以盜用的身分替北韓IT工作者接收工資支票，再將收益移轉給他們。
-
-**其他執法行動**
-
-◆**[執法單位起底勒索軟體BlackSuit的暗網網站](https://www.bleepingcomputer.com/news/security/law-enforcement-seizes-blacksuit-ransomware-leak-sites/)**
+目前這項資安漏洞尚未取得CVE編號，該漏洞出現在MX-ONE的元件Provisioning Manager，起因是存取控制不當造成，一旦攻擊者成功利用，就能在未經授權的情況下進行身分驗證繞過攻擊，直接存取管理員的帳號。
 
 ### **【資安產業動態】**
 
-[**為保護用戶隱私，Brave、AdGuard加入封鎖Windows 11 Recall功能的行列**](https://www.ithome.com.tw/news/170279)
+[**強化Prompt安全性成當務之急，從MCP生命週期、Agentic系統構成看資安挑戰**](https://www.ithome.com.tw/news/170300)
 
-微軟去年於開發者大會Build 2024前夕宣布[將為AI電腦Copilot+ PC加入Recall功能](https://www.ithome.com.tw/news/162988)，由於[該功能](https://www.ithome.com.tw/tags/recall)會記錄用戶所有活動，[引發外界擔心個資保護機制不夠完備](https://www.ithome.com.tw/news/163045)而延後推出，事隔一年，微軟在加強相關防護後，[重新對Windows 11 24H2用戶部署相關功能](https://www.ithome.com.tw/news/168628)，但部分應用程式開發商還是不買帳，繼即時通訊軟體Signal第一個宣布阻擋相關功能截取用戶聊天內容後，上週有瀏覽器及資安業者跟進。
+隨著LLM（大型語言模型）的應用起飛，新技術帶來機會，也產生風險，今年Agentic AI的快速崛起，更進一步加劇這方面的風險，也引起全球企業的高度關注，因此，這一兩年以來，開始有越來越多廠商開發相關的資安防禦解決方案，像是AI護欄（AI Guardrails）、AI Gateway，Firewall for AI，而且，國外已有不少資安或新創廠商積極投入，國內卻寥寥可數，奧義智慧正是其中之一，7月1日宣布推出新世代AI防火牆安全模組。
 
-瀏覽器業者Brave於7月22日宣布，他們[預計於](https://github.com/brave/brave-browser/wiki/Brave-Release-Schedule)8月2日發布的1.81版當中，為Windows版加入關閉被Recall擷取上網內容的功能，此功能為預設開啟，若是用戶需要Recal記錄曾經開啟的分頁內容，也可手動關閉這項功能。Brave指出，具體來說，他們採取的做法，就是讓Windows以為用戶啟動隱私上網（Private Browsing）模式，使得Recall不會擷取所有視窗當中的分頁內容。
+相隔幾天之後，在該公司舉辦的第二屆AI年會上，資料科學研發處處長楊政霖提出這方面的說明，幫助大家更清楚理解Agentic AI時代的資安挑戰，也提出相應的防禦思維與建議。
 
-附帶一提的是，廣告封鎖軟體開發商AdGuard也宣布跟進，將於7.21版預設封鎖Recall，並指出雖然它僅影響Copilot+ PC，但由於這些裝置很快就會成為市場主流，因此他們還是決定採取行動保護用戶。
+[**Google釋出OSS Rebuild確保開源套件安全**](https://www.ithome.com.tw/news/170265)
+
+Google釋出OSS Rebuild以協助開發人員確保開源套件的安全性，免於供應鏈攻擊，目前已支援PyPI、NPM和Crates.io套件。
+
+該公司指出，開源軟體已成現代應用開發的重要工具，然而開源工具普及使用也使其成為新的攻擊目標，像是透過感染眾多人使用的套件進行供應鏈攻擊。開源社群也分別發展出安全工具，如OpenSSF推出的安全檢查工具Security Scorecard、PyPI的Trusted Publisher和npm原生支援由OpenSSF主導的SLSA（Supply-chain Levels for Software Artifacts）框架等。但是這些計畫都只能解決部分問題，使專案的工作負擔，都落在接手的發布者或維護者身上。
+
+OSS Rebuild包括四個部分：自動建構定義、SLSA Provenance證明、建構驗證工具及可自行架設的基礎架構。技術層面而言，OSS Rebuild透過自動化與啟發式（heuristics）技術重建開源套件並驗證其來源與建構方式，以便使用者驗證套件來源、瞭解其建構流程，並可基於可信版本進行自訂建構或產生更詳細的SBOM（軟體物料清單）。
 
 ### **近期資安日報**
+
+[**【7月28日】勒索軟體ShinyHunters傳出對保險公司安聯人壽發動攻擊**](https://www.ithome.com.tw/news/170280)
 
 [**【7月25日】SharePoint零時差漏洞災情浮現，恐成為全球危機**](https://www.ithome.com.tw/news/170267)
 
 [**【7月24日】微軟支援身障者無障礙用途的UI自動化機制首遭惡意程式濫用**](https://www.ithome.com.tw/news/170243)
-
-[**【7月23日】3組中國駭客使用SharePoint零時差漏洞從事攻擊**](https://www.ithome.com.tw/news/170231)

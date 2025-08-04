@@ -1,90 +1,82 @@
-Title: 【資安日報】7月24日，微軟支援身障者無障礙用途的UI自動化機制首遭惡意程式濫用
+Title: 【資安日報】7月25日，SharePoint零時差漏洞災情浮現，恐成為全球危機
 
-URL Source: https://www.ithome.com.tw/news/170243
+URL Source: https://www.ithome.com.tw/news/170267
 
-Published Time: Thu, 24 Jul 2025 23:09:52 GMT
+Published Time: Fri, 25 Jul 2025 23:09:39 GMT
 
 Markdown Content:
-為了避免攻擊活動東窗事發，濫用合法、系統內建的公用程式，已是駭客經常會使用的策略，在今天的資安新聞裡，惡意軟體Coyote最值得留意，因為駭客運用協助身障人士的桌面應用程式自動化框架UI Automation（UIA），而相關手法，能廣泛對執行Windows XP以上電腦下手。
+本週最重大的資安事故，莫過於SharePoint零時差漏洞CVE-2025-53770（ToolShell）攻擊，這兩天陸續有新的消息傳出，其中一個是中國駭客Storm-2603用於入侵受害組織，並部署勒索軟體Warlock而產生破壞；另一個消息，則是美國能源部旗下的核安管理署（NNSA）傳出受害，這樣的情況很可能引發核能安全危機。
 
-除此之外，濫用合法工具的情況，也發生在針對Magento、Docker的攻擊行動上，駭客以多種手法隱匿活動；駭客組織APT41、HazyBeacon濫用SharePoint主機、AWS Lambda的函數URL功能也值得留意。
+另一個值得留意事故的是，在上週奢華品牌Louis Vuitton（LV）全球多家分公司接連傳出遭到入侵，並出現客戶資料外流的現象後，同樣隸屬LVMH集團的迪奧（Christian Dior Couture），本週開始向受影響的客戶通知資料外洩事故，並向美國3個州檢察長通報。
 
 ### **【攻擊與威脅】**
 
-[**首度發現UI Automation遭濫用！Coyote惡意軟體瞄準民眾金融帳密下手**](https://www.ithome.com.tw/news/170237)
+[**中國駭客Storm-2603從事SharePoint零時差漏洞攻擊，意圖散布勒索軟體Warlock**](https://www.ithome.com.tw/news/170266)
 
-[![Image 1](https://s4.itho.me/sites/default/files/images/active-exploitation-coyote-malware-first-ui-automation-abuse-in-the-wild-one.png)](https://s4.itho.me/sites/default/files/images/active-exploitation-coyote-malware-first-ui-automation-abuse-in-the-wild-one.png)
+[![Image 1](https://s4.itho.me/sites/default/files/images/Storm-2603.png)](https://s4.itho.me/sites/default/files/images/Storm-2603.png)
 
-一般而言，駭客迴避端點電腦的防毒軟體和EDR系統，最常見的手法是濫用合法、存在已知弱點的驅動程式，從事自帶驅動程式（BYOVD）攻擊，癱瘓這些端點防護機制的運作，但近期駭客也發展出一些非典型的手法，例如：藉由特定廠牌EDR端點代理程式的本機安裝流程瑕疵，透過升級或降級作業來進行「自帶安裝程式（Bring Your Own Installer）」攻擊，現在又發展出新型態的手法，濫用作業系統內建的公用程式來達到目的。
+上週末爆發的SharePoint零時差漏洞攻擊事故，攻擊者利用被稱為ToolShell的資安漏洞CVE-2025-53770發動攻擊，時間最早可追溯到7月7日，微軟22日指出他們確認有3組中國駭客從事漏洞利用活動，這些組織分別是：Linen Typhoon、Violet Typhoon，以及Storm-2603，但當時僅有說明這些駭客如何利用ToolShell，以及他們偏好攻擊的目標，並未對相關攻擊事故透露有關細節，隔天表示在他們的積極追蹤下，確認Storm-2603用於從事Warlock勒索軟體攻擊活動。
 
-最近資安業者Akamai揭露惡意軟體Coyote新一波攻擊行動，就是這樣的例子。此惡意軟體鎖定巴西使用者而來，目標涵蓋75家銀行及加密貨幣交易所的用戶，最特殊的地方在於，駭客濫用了微軟在Windows作業系統提供的桌面應用程式自動化框架UI Automation（UIA），而這是首度有惡意軟體攻擊運用這種公用程式的情形。
+這些駭客會尋找可透過網際網路存取的SharePoint伺服器，並透過spinstall0.aspx有效酬載（Web Shell）建立初期的存取管道，進而運用w3wp.exe處理程序執行命令。微軟看到駭客下達了一系列的命令，包含whoami來進行偵察，並找出所有使用者並確認權限層級。接著，他們運用CMD和批次指令碼，以及公用程式PsExec進行更廣泛的活動。為了能讓攻擊不受阻礙，駭客濫用services.exe竄改機碼，從而停用內建防毒Microsoft Defender。
 
-[**Docker、電商平臺Magento遭到鎖定，駭客運用多種隱密的手法挖礦、架設代理伺服器**](https://www.ithome.com.tw/news/170240)
+[**美國核武機構NNSA傳出遭遇SharePoint漏洞攻擊**](https://www.ithome.com.tw/news/170248)
 
-[![Image 2](https://s4.itho.me/sites/default/files/images/mimo-graph.png)](https://s4.itho.me/sites/default/files/images/mimo-graph.png)
+7月中SharePoint零時差漏洞CVE-2025-53770（ToolShell）遭駭事件受害層面逐漸擴大，如今傳出有受害組織的身分曝光美國核安管理署（National Nuclear Security Administration，NNSA）在內的美國政府機構。
 
-今年5月，以經濟利益為目標的駭客組織Mimo（或稱Mimo'lette）鎖定內容管理平臺Craft CMS而來，利用滿分已知漏洞CVE-2025-32432從事攻擊，於受害主機植入惡意程式載入工具Mimo Loader、挖礦軟體、代理伺服器軟體，濫用伺服器的算力及流量牟利，如今雲端安全及監控業者Datadog發現，這些駭客將攻擊目標延伸到組態不當的Docker，以及電商網站平臺Magento，而且，手法變得更加隱密。
+荷蘭資安業者Eye Security上周末首先公開數十家機構SharePoint伺服器發生濫用漏洞事件，後來其中較重大的漏洞被命名為CVE-2025-53770，而其濫用漏洞的手法則稱為ToolShell。多家資安業者估計，初期受害者涵括美國政府機構。
 
-Datadog指出，他們近日針對電商網站遭入侵的事故進行調查，這些攻擊涉及一系列工作負載（Workload）被駭，駭客利用未公布的PHP FastCGI Process Manager（PFP-FPM）資安漏洞來危害Magento，經過比對，確認攻擊者的身分是先前資安業者Sekoia揭露的Mimo。針對這樣的攻擊策略轉變，Datadog認為駭客不光只是鎖定不同目標，還有引入新的迴避偵測手法，以及在受害主機持續活動的機制，凸顯了該組織在戰術、手法、流程（TTP）出現重大變化。
+美國能源部向彭博社證實，能源部下他們旗下的國家核安管理署（NNSA）網路上周遭駭客存取。事件發生在7月18日。能源部發言人說，由於Microsoft 365及其網路安全系統的普及，能源部難免受影響。但他強調，NNSA只有極少數系統受影響，而且所有受影響的系統都已恢復營運。
 
-[**中國駭客APT41鎖定非洲政府IT基礎設施而來，入侵SharePoint伺服器充當C2**](https://www.ithome.com.tw/news/170241)
+[**時尚美妝品牌Dior向客戶通知年初資料外洩事件**](https://www.ithome.com.tw/news/170260)
 
-[![Image 3](https://s4.itho.me/sites/default/files/images/apt41-in-africa2.png)](https://s4.itho.me/sites/default/files/images/apt41-in-africa2.png)
+LVMH集團旗下迪奧（Christian Dior Couture）本周向客戶寄發通知信件，告知他們受到半年前的客戶資料外洩事件影響，其中包含加州、德州及華盛頓州消費者。
 
-上週末SharePoint零時差漏洞CVE-2025-53770（ToolShell）攻擊引起全球關注，微軟確認有三組中國駭客Linen Typhoon、Violet Typhoon、Storm-2603從事相關活動，巧合的是，資安業者卡巴斯基也發現另一起與SharePoint有關的資安事故，攻擊者的身分是惡名昭彰的中國駭客APT41。
+Dior起初在5月透過網站公告這起事件，但直到7月18日才向受影響的客戶發送個別通知信件。這起事件實際發生於今年1月，Dior 5月7日證實遭未經授權的第三方人士存取特定資料庫，竊走儲存的客戶資料。這次事件外洩的客戶個資包含住家地址、出生日期、社會安全號碼、電子郵件信箱，部份客戶更有護照或身份證件資料被存取。
 
-這起事故駭客針對非洲政府的IT服務而來，他們在惡意軟體裡嵌入內部服務名稱、IP位址、代理伺服器的資料，特別的是，其中一個C2伺服器，竟是濫用受害組織基礎設施裡的SharePoint主機。
+共有多少分公司受害目前不得而知，但有加州、德州及華盛頓州州檢察長公告Dior於1月的資安事件。共有9716名德州及10878名華盛頓州民受影響，加州居民受影響人數不詳。
 
-附帶一提的是，APT41如果在初步偵察後認為受害電腦對後續活動具有重要價值，他們就會試圖建置Command Shell存取管道，藉由下載惡意的HTA檔案，執行嵌入的JavaScript指令碼，於受害電腦下載惡意程式，以及後續攻擊所需的其他工具。
+[**熱門NPM套件遭到挾持，駭客上架新套件散布惡意程式，起因是維護者遭網釣導致Token外流**](https://www.ithome.com.tw/news/170262)
 
-[**HazyBeacon濫用AWS Lambda隱匿活動，意圖竊取東南亞政府關稅貿易資料**](https://www.ithome.com.tw/news/170119)
+[![Image 2](https://s4.itho.me/sites/default/files/images/468168199-591bdf7b-7767-45ca-8532-35a2579b8e58.png)](https://s4.itho.me/sites/default/files/images/468168199-591bdf7b-7767-45ca-8532-35a2579b8e58.png)
 
-[![Image 4](https://s4.itho.me/sites/default/files/images/word-image-881439-146273-2.png)](https://s4.itho.me/sites/default/files/images/word-image-881439-146273-2.png)
+鎖定開發人員的惡意NPM套件攻擊經常發生，其中大部分駭客都是透過假冒知名冒件的方式，使用極為相似的名稱騙過開發人員，導致他們不慎下載惡意軟體，但最近一波攻擊行動引起軟體開發圈的關注，原因是駭客先針對套件維護者下手，取得他們的NPM帳號來發布新版套件。
 
-有許多組織運用無伺服器（Serverless）的運算服務，部分駭客也盯上這類服務並用於攻擊行動，例如，2022年資安業者Cado Security揭露名為Denonia的惡意軟體，駭客就是針對名為AWS無伺服器服務Lambda下手，部署挖礦軟體牟利，如今又有濫用這項服務的資安事故傳出。
+根據資安新聞網站Bleeping Computer的報導，每週被下載超過3千萬次的熱門套件eslint-config-prettier，在上週末遭遇供應鏈攻擊，套件維護人員JounQin遭受網釣攻擊，導致他的NPM帳號Token外流，攻擊者得逞後，以他的名義在NPM套件庫上架有問題的套件。
 
-例如，由駭客組織CL-STA-1020發起的攻擊行動，就是這樣的例子。揭露此事的資安業者Palo Alto Networks指出，他們從2024年底追蹤這些駭客的活動，對方的攻擊目標是東南亞政府機關，目的是收集敏感資訊，特別是關於關稅與貿易爭端的資料。
+這起事故發現的過程，起因是7月18日有開發人員安裝特定版本的eslint-config-prettier之後，電腦出現不尋常的行為，這些新版套件存在怪異的共通點，那就是維護者雖然在NPM儲存庫上架，卻並未在GitHub專案更新對應的內容，這種情況隨即引起開源軟體社群的注意。
 
-在這波攻擊活動裡，駭客運用名為HazyBeacon的後門程式引起Palo Alto Networks的注意，因為該後門程式濫用AWS Lambda的函數URL功能建立C2通訊。此功能的主要用途，是讓使用者能直接透過HTTPS呼叫無伺服器運算的功能，一旦攻擊者濫用這種合法功能，就能建立具備可靠、可延伸的通道，但難以察覺相關惡意行為。
+[**Ivanti SSL VPN系統零時差漏洞遭到利用，駭客用來散布MDifyLoader、Cobalt Strike**](https://www.ithome.com.tw/news/170149)
+
+[![Image 3](https://s4.itho.me/sites/default/files/images/ivanti_cs01-800wri.png)](https://s4.itho.me/sites/default/files/images/ivanti_cs01-800wri.png)
+
+今年1月、4月資安業者Ivanti修補旗下SSL VPN系統Ivanti Connect Secure（ICS）重大層級資安漏洞CVE-2025-0282、CVE-2025-22457（CVSS風險皆為9.0），臺灣資安業者杜浦數位安全（TeamT5）今年3月偵測到中國APT駭客用來發動大規模攻擊，在臺灣、日本、韓國等12個國家造成災情，駭客攻擊的範圍涵蓋近20個不同的產業，並提及駭客可能仍持續控制受害組織的環境，最近有資安組織公布新的調查結果，指出利用這兩個漏洞相關的攻擊行動，在去年就已出現。
+
+日本電腦緊急應變小組（JPCERT/CC）指出，他們針對今年2月、4月公布的惡意軟體SpawnChimera、DslogdRAT著手進行深度調查，結果找到更多專門針對ICS零時差漏洞而來的惡意程式及作案工具，駭客從去年12月開始，利用CVE-2025-0282與CVE-2025-22457從事攻擊，散布惡意程式MDifyLoader、Cobalt Strike、Vshell、Fscan，值得留意的是，相關活動迄今仍在持續進行。
+
+[**新加坡關鍵基礎設施遭中國駭客UNC3886鎖定，或透過路由器與資安設備滲透**](https://www.ithome.com.tw/news/170195)
+
+新加坡網路安全局（CSA）發布聲明指出，近期在新加坡部分關鍵基礎設施偵測到的網路攻擊活動，其背後可能與中國背景的進階持續性威脅（APT）組織UNC3886有關。CSA表示，目前正持續追蹤並調查此一攻擊事件，並強調已啟動跨單位合作與威脅情報共享機制，以協助受影響的機構進行相關防禦措施，但基於調查考量，暫不會公開攻擊行動的技術細節。
+
+CSA此次聲明僅簡短指出，UNC3886的攻擊手法具備長期潛伏、高針對性，以及難以短時間內根除的特性，因此未來相關應對與調查工作將持續一段時間。UNC3886此前被資安公司Mandiant以及部分業界報告認為與中國有高度關聯，該組織曾多次透過入侵VPN、路由器、邊界防火牆等重要網路設備，以取得持續性的內部網路通道，並監控特定國家的政府機構或基礎設施營運商。
 
 **其他攻擊與威脅**
 
-◆**[美國核武機構傳出遭遇SharePoint零時差漏洞攻擊](https://www.bleepingcomputer.com/news/security/us-nuclear-weapons-agency-hacked-in-microsoft-sharepoint-attacks/)**
+◆**[駭客組織Fire Ant鎖定VMware虛擬化平臺而來，部署後門程式](https://thehackernews.com/2025/07/fire-ant-exploits-vmware-flaw-to.html)**
 
-◆**[伊朗駭客假借提供VPN應用程式，意圖散布安卓惡意軟體DCHSpy](https://thehackernews.com/2025/07/iran-linked-dchspy-android-malware.html)**
+◆**[中國駭客聲稱提供達賴喇嘛應用程式，對圖博從事間諜活動](https://thehackernews.com/2025/07/china-based-apts-deploy-fake-dalai-lama.html)**
 
-◆**[約2千臺MCP伺服器缺乏存取控制，恐影響AI模型安全](https://www.darkreading.com/vulnerabilities-threats/2000-mcp-servers-security)**
+◆**[駭客組織EncryptHub假借提供搶先體驗的遊戲，意圖散布惡意軟體](https://www.bleepingcomputer.com/news/security/hacker-sneaks-infostealer-malware-into-early-access-steam-game/)**
 
-◆**[網釣手法PoisonSeed可突破FIDO金鑰防護](https://www.darkreading.com/remote-workforce/poisonseed-attacker-fido-keys)**
+**其他漏洞與修補**
 
-### **【漏洞與修補】**
+◆**[SonicWall SMA 100系列設備存在任意檔案上傳漏洞](https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-critical-rce-flaw-in-sma-100-VPN-appliances/)**
 
-[**Sophos修補防火牆軟體RCE、指令注入漏洞**](https://www.ithome.com.tw/news/170236)
-
-Sophos本周釋出軟體更新，修補存在防火牆產品Sophos Firewall可造成遠端程式碼執行及指令注入的 5項重大及高風險漏洞，分別是：重大層級的CVE-2025-6704、CVE-2025-7624，以及中高風險的CVE-2025-7382、CVE-2024-13974和CVE-2024-13973。
-
-其中CVE-2025-6704為存在Secure PDF eXchange（SPX）功能的任意檔案寫入漏洞。如果防火牆以高可用性（High Availability，HA）模式執行，配合啟動SPX特定配置，就可能導致前驗證（Pre-auth）遠端程式碼執行，估計影響0.05%該廠牌防火牆裝置。
-
-CVE-2025-7624為透通模式SMTP代理伺服器的SQL注入漏洞。如果Email的隔離政策啟動，且SFOS是由21.0 GA版本升級的話，可能導致遠端程式碼執行，影響0.73%裝置。
-
-### **【資安產業動態】**
-
-[**強化雲端組態安全，3大公有雲CIS Benchmark是資安專家推薦首選**](https://www.ithome.com.tw/news/170220)
-
-近年臺灣企業上雲比例大幅增加，面對雲端安全管理方面的挑戰，特別是3大公有雲環境中，如何確保正確的組態設定，以及啟用關鍵的日誌記錄服務，一直是資安專家反覆強調的議題。
-
-特別的是，企業可參考的雲端安全組態相關標準或最佳實務已有不少，CIS Benchmark是經常提及的資源之一，只是，過往少有單一針對此標準的內容探討，在今年2025臺灣雲端大會上，Google Cloud客戶解決方案架構師鄭家明進一步解析這部分內容，幫助大家掌握其重點。
-
-CIS Benchmark是針對特定作業系統、應用程式與硬體設備而來，所制定相應的安全組態最佳實務指引，目前已推出數十種版本，涵蓋Microsoft IIS、MongoDB、NGINX、PostgreSQL等，亦包含AWS、Azure、GCP等主要雲端平臺。
-
-**其他資安產業動態**
-
-◆**[為保護用戶隱私，Brave加入封鎖Windows 11 Recall功能的行列](https://www.bleepingcomputer.com/news/security/brave-blocks-windows-recall-from-screenshotting-your-browsing-activity/)**
+◆**[Mitel整合式通訊系統MX-ONE存在重大漏洞，恐被用於繞過身分驗證](https://www.bleepingcomputer.com/news/security/mitel-warns-of-critical-mivoice-mx-one-authentication-bypass-flaw/)**
 
 ### **近期資安日報**
+
+[**【7月24日】微軟支援身障者無障礙用途的UI自動化機制首遭惡意程式濫用**](https://www.ithome.com.tw/news/170243)
 
 [**【7月23日】3組中國駭客使用SharePoint零時差漏洞從事攻擊**](https://www.ithome.com.tw/news/170231)
 
 [**【7月22日】Dell傳出遭World Leaks勒索，測試環境資料外洩**](https://www.ithome.com.tw/news/170211)
-
-[**【7月21日】SharePoint驚傳零時差漏洞攻擊，逾85臺伺服器受害**](https://www.ithome.com.tw/news/170174)
