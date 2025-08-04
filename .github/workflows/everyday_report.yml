@@ -35,3 +35,11 @@ jobs:
           name: data-report
           path: ./
   
+      - name: Delete file named 'Test'
+        run: |
+          rm -f Test
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Delete file named 'Test'"
+          git push
