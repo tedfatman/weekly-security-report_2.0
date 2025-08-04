@@ -4,7 +4,7 @@ import requests
 
 # === 路徑設定 ===
 input_json_path = "../data/news_links.json"
-output_folder = "../scripts"
+output_folder = "./"
 os.makedirs(output_folder, exist_ok=True)
 
 # === 讀取 JSON ===
