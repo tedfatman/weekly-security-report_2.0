@@ -29,5 +29,9 @@ jobs:
 
       - name: 抓取資安新聞(markdown格式)
         run: python scripts/download_articles_markdown.py
-
+      - name: Archive coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: data-report
+          path: ../data
   
