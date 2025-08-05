@@ -34,8 +34,13 @@ jobs:
         with:
           name: data-report
           path: ./
-  
+
+
+      - name: 整理資安新聞
+        run: python scripts/Analysis_articles.py    
+
       - name: AI Agent產生每日新聞摘要（Groq API）
         run: python scripts/Analysis_articles_groq.py
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
