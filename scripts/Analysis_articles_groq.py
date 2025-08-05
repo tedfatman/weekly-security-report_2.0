@@ -5,7 +5,7 @@ MERGED_FILE = "../data/structured_report.json"
 REPORT_FILE = "../data/structured_report_everyday.md"
 
 # ✅ API Key
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_API_KEY = os.getenv("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")
 if not GROQ_API_KEY:
     raise ValueError("❌ 環境變數 GROQ_API_KEY 未設定！")
 
