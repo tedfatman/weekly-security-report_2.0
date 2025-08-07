@@ -44,3 +44,8 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
+
+      - name: 發送 Discord 通知(每日新聞摘要)
+        run: python scripts/send_notification_discord_everyday.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_EVERYDAY }}     
